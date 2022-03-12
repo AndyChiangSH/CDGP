@@ -131,4 +131,5 @@ dmypy.json
 # my ignore
 CDG-env/
 models/
+datasets/
 .vscode/
