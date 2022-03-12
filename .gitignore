@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# my ignore
+CDG-env/
+models/CSG/*
+models/DS/*
+.vscode/
