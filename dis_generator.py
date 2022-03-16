@@ -1,17 +1,17 @@
-from pyexpat import model
-from tkinter.messagebox import QUESTION
 from tqdm import tqdm
 import os
 from transformers import BertTokenizer, BertConfig, BertForMaskedLM, pipeline
 import numpy as np
 import fasttext
-import warnings
 import nltk
 from nltk.tokenize import word_tokenize
 import json
 
-
-CSG_MODEL_NAME = r"BERT_DGen_model1"
+# global variable
+# BERT_CLOTH_model
+# BERT_DGen_model1
+# BERT_CLOTH_DGen_model1
+CSG_MODEL_NAME = r"BERT_CLOTH_model"
 TOP_K = 10
 
 
@@ -48,7 +48,7 @@ def main():
         dis_results.append(dis_result)
 
     print("Write to json file...")
-    with open("dis_result.json", "w") as file:
+    with open(f"./results/dis_result_{CSG_MODEL_NAME}.json", "w") as file:
         json.dump(dis_results, file)
 
     print("Done!")
@@ -151,8 +151,8 @@ def generate_dis(my_unmasker, ds_model, sent, answer):
     # print("cs_rank:", cs_rank)
 
     # Top 3
-    distractors = cs_rank[:3]
-    result = [d[0] for d in distractors]
+    # top_k = cs_rank[:3]
+    result = [d[0] for d in cs_rank]
 
     return result
 
