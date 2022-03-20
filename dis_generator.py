@@ -11,11 +11,12 @@ import json
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-CSG_MODEL_NAME = "SciBERT_DGen_model1"
+CSG_MODEL_NAME = "SciBERT_CLOTH&DGen_model1"
 # bert-base-uncased
 # allenai/scibert_scivocab_uncased
 PRETRAIN_MODEL_NAME = "allenai/scibert_scivocab_uncased"
 TOP_K = 10
+STOP_WORDS = ["[MASK]", "[SEP]", "[PAD]", "[CLS]"]
 
 
 def main():
@@ -30,7 +31,7 @@ def main():
     csg_model.eval()
 
     # create unmasker
-    my_unmasker = pipeline('fill-mask', tokenizer=tokenizer, config=config, model=csg_model, top_k=TOP_K)
+    unmasker = pipeline('fill-mask', tokenizer=tokenizer, config=config, model=csg_model, top_k=TOP_K)
 
     # load DS model
     model_path = r"./models/DS/fasttext_model/wiki_en_ft_model01.bin"
@@ -45,7 +46,7 @@ def main():
     for question in tqdm(questions):
         sent = question["sentence"].replace("**blank**", "[MASK]")
         answer = question["answer"]
-        result = generate_dis(my_unmasker, ds_model, sent, answer)
+        result = generate_dis(unmasker, ds_model, sent, answer)
         # print("result:", result)
         dis_result = {"distractors": question["distractors"], "generations": result}
         dis_results.append(dis_result)
@@ -57,13 +58,15 @@ def main():
     print("Done!")
 
 
-def generate_dis(my_unmasker, ds_model, sent, answer):
+def generate_dis(unmasker, ds_model, sent, answer):
     target_sent = sent + " [SEP] " + answer
     # print(target_sent)
 
     cs = list()
-    for cand in my_unmasker(target_sent):
-        cs.append({"word": cand["token_str"].replace(" ", ""), "s0": cand["score"], "s1": 0.0, "s2": 0.0, "s3": 0.0})
+    for cand in unmasker(target_sent):
+        word = cand["token_str"].replace(" ", "")
+        if word not in STOP_WORDS:  # skip stop words
+            cs.append({"word": word, "s0": cand["score"], "s1": 0.0, "s2": 0.0, "s3": 0.0})
     # print(cs)
 
     # 0.模型信心分數
@@ -154,8 +157,7 @@ def generate_dis(my_unmasker, ds_model, sent, answer):
     # print("cs_rank:", cs_rank)
 
     # Top 3
-    # top_k = cs_rank[:3]
-    result = [d[0] for d in cs_rank]
+    result = [d[0] for d in cs_rank[:10]]
 
     return result
 
@@ -164,7 +166,10 @@ def generate_dis(my_unmasker, ds_model, sent, answer):
 def similarity(v1, v2):
     n1 = np.linalg.norm(v1)
     n2 = np.linalg.norm(v2)
-    return np.dot(v1, v2) / n1 / n2
+    if n1 == 0 or n2 == 0:
+        return 1
+    else:
+        return np.dot(v1, v2) / (n1 * n2)
 
 
 # Min-Max 歸一化
@@ -182,6 +187,3 @@ def min_max_y(raw_data):
 
 if __name__ == "__main__":
     main()
-
-
-    
