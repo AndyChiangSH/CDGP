@@ -8,16 +8,18 @@ import csv
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-MODEL_NAME = "BERT_CLOTH_model"
-RESULT_NAME = "dis_result_" + MODEL_NAME + ".json"
+MODEL_NAME = "SciBERT_DGen_model1"
+RESULT_NAME = "result_" + MODEL_NAME + ".json"
 
 
 def main():
+    # reading result
     result_path = os.path.join("./results/", RESULT_NAME)
     print(f"Reading result at {result_path}...")
     with open(result_path, "r") as file:
         results = json.load(file)
 
+    # evaluating
     print("Evaluating...")
     avg_eval = eval = {"P@1": 0.0, "P@3": 0.0, "R@3": 0.0, "F1@3": 0.0, "MRR": 0.0, "NDCG@10": 0.0}
     for result in results:
@@ -25,17 +27,25 @@ def main():
         for k in avg_eval.keys():
             avg_eval[k] += eval[k]
 
+    # calculate average
     for k in avg_eval.keys():
         avg_eval[k] /= len(results)
-
     # print(avg_eval)
 
+    # save evaluation to csv
     print("Save to csv file...")
     with open(f"./evaluations/evaluation_{MODEL_NAME}.csv", "w", newline="", encoding="utf-8-sig") as csvfile:
         writer = csv.writer(csvfile)
+        key_list = list()
+        value_list = list()
         for k in avg_eval.keys():
-            writer.writerow([k, avg_eval[k]*100])
+            key_list.append(k)
+            value_list.append(avg_eval[k]*100)
 
+        writer.writerow(key_list)
+        writer.writerow(value_list)
+
+    # show evaluation
     for k in avg_eval.keys():
         print(f"{k}: {avg_eval[k]*100}%")
 

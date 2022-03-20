@@ -11,7 +11,10 @@ import json
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-CSG_MODEL_NAME = r"BERT_CLOTH_model"
+CSG_MODEL_NAME = "SciBERT_DGen_model1"
+# bert-base-uncased
+# allenai/scibert_scivocab_uncased
+PRETRAIN_MODEL_NAME = "allenai/scibert_scivocab_uncased"
 TOP_K = 10
 
 
@@ -21,9 +24,9 @@ def main():
     print(f"Load CSG model at {model_path}...")
 
     # load CSG model
-    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    tokenizer = BertTokenizer.from_pretrained(PRETRAIN_MODEL_NAME)
     config = BertConfig.from_pretrained(os.path.join(model_path, "config.json"))
-    csg_model = BertForMaskedLM.from_pretrained(os.path.join(model_path, "pytorch_model.bin"), from_tf=bool('.ckpt' in 'bert-base-uncased'), config=config)
+    csg_model = BertForMaskedLM.from_pretrained(os.path.join(model_path, "pytorch_model.bin"), config=config, from_tf=False)
     csg_model.eval()
 
     # create unmasker
@@ -48,7 +51,7 @@ def main():
         dis_results.append(dis_result)
 
     print("Write to json file...")
-    with open(f"./results/dis_result_{CSG_MODEL_NAME}.json", "w") as file:
+    with open(f"./results/result_{CSG_MODEL_NAME}.json", "w") as file:
         json.dump(dis_results, file)
 
     print("Done!")
