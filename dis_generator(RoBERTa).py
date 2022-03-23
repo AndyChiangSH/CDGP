@@ -1,6 +1,6 @@
 from tqdm import tqdm
 import os
-from transformers import BartTokenizer, BartForConditionalGeneration, pipeline
+from transformers import RobertaTokenizer, RobertaForMaskedLM, pipeline
 import numpy as np
 import fasttext
 import nltk
@@ -11,13 +11,13 @@ import json
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-CSG_MODEL_NAME = "BART_DGen_model1"
+CSG_MODEL_NAME = "RoBERTa_DGen_model3"
 # bert-base-uncased
 # allenai/scibert_scivocab_uncased
-# facebook/bart-base
-PRETRAIN_MODEL_NAME = "facebook/bart-base"
+# roberta-base
+PRETRAIN_MODEL_NAME = "roberta-base"
 TOP_K = 10
-STOP_WORDS = ["<mask>", "<sep>", "<pad>", "<cls>", "\n", ">", "<", ""]
+STOP_WORDS = ["<mask>", "<pad>", "<unk>", "<s>", "</s>", "\n", ">", "<", ""]
 min_len = 100
 
 
@@ -27,8 +27,9 @@ def main():
     print(f"Load CSG model at {model_path}...")
 
     # load CSG model
-    csg_model = BartForConditionalGeneration.from_pretrained(model_path)
-    tokenizer = BartTokenizer.from_pretrained(PRETRAIN_MODEL_NAME)
+    tokenizer = RobertaTokenizer.from_pretrained(PRETRAIN_MODEL_NAME)
+    csg_model = RobertaForMaskedLM.from_pretrained(model_path)
+    csg_model.eval()
 
     # create unmasker
     unmasker = pipeline('fill-mask', tokenizer=tokenizer, model=csg_model, top_k=TOP_K)
@@ -60,16 +61,17 @@ def main():
 
 
 def generate_dis(unmasker, ds_model, sent, answer):
-    target_sent = sent + " <sep> " + answer
+    target_sent = sent + " </s> " + answer
     # print(target_sent)
 
     cs = list()
     for cand in unmasker(target_sent):
         word = cand["token_str"].replace(" ", "")
-        if word not in STOP_WORDS:  # skip stop words
+        # if word not in STOP_WORDS:  # skip stop words
+        if len(word) > 0:
             cs.append({"word": word, "s0": cand["score"], "s1": 0.0, "s2": 0.0, "s3": 0.0})
-    # print("cs:", cs)
-    
+    # print(cs)
+
     global min_len
     min_len = min(min_len, len(cs))
 
@@ -112,7 +114,6 @@ def generate_dis(unmasker, ds_model, sent, answer):
     sent_similarities = list()
     #兩句子距離
     for cand_sent in cand_sents:
-        # cand_sent = cand_sent.replace("\n", "")
         cand_sent_vector = ds_model.get_sentence_vector(cand_sent)
         sent_similarity = similarity(correct_sent_vector, cand_sent_vector)
         sent_similarities.append(sent_similarity)
@@ -124,15 +125,15 @@ def generate_dis(unmasker, ds_model, sent, answer):
 
     # 3.詞性相似度
     origin_token = word_tokenize(sent)
-    # print("origin_token:", origin_token)
     origin_token.remove("<")
     origin_token.remove(">")
+    # print(origin_token)
 
     mask_index = origin_token.index("mask")
-    # print("mask_index:", mask_index)
+    # print(mask_index)
 
     correct_token = word_tokenize(correct_sent)
-    # print("correct_token:", correct_token)
+    # print(correct_token)
     correct_pos = nltk.pos_tag(correct_token)
     # print(correct_pos)
 
@@ -142,9 +143,7 @@ def generate_dis(unmasker, ds_model, sent, answer):
 
     for i, c in enumerate(cs):
         cand_sent_token = word_tokenize(cand_sents[i])
-        # print("cand_sent_token:", cand_sent_token)
         cand_sent_pos = nltk.pos_tag(cand_sent_token)
-        # print("cand_sent_pos:", cand_sent_pos)
         cand_pos = cand_sent_pos[mask_index]
 
         if cand_pos[1] == answer_pos[1]:

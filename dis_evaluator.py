@@ -8,7 +8,7 @@ import csv
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-MODEL_NAME = "BART_DGen_model1"
+MODEL_NAME = "RoBERTa_DGen_model3"
 RESULT_NAME = "result_" + MODEL_NAME + ".json"
 
 
@@ -55,7 +55,7 @@ def main():
 def evaluate(result):
     eval = {"P@1": 0.0, "P@3": 0.0, "R@3": 0.0, "F1@3": 0.0, "MRR": 0.0, "NDCG@10": 0.0}
     distractors = [d.lower() for d in result["distractors"]]
-    generations = result["generations"]
+    generations = [d.lower() for d in result["generations"]]
 
     relevants = [int(generation in distractors) for generation in generations]
     # print(relevants)
