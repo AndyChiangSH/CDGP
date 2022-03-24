@@ -11,7 +11,7 @@ import json
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-CSG_MODEL_NAME = "RoBERTa_DGen_model3"
+CSG_MODEL_NAME = "RoBERTa_CLOTH&DGen_model2"
 # bert-base-uncased
 # allenai/scibert_scivocab_uncased
 # roberta-base
@@ -67,8 +67,8 @@ def generate_dis(unmasker, ds_model, sent, answer):
     cs = list()
     for cand in unmasker(target_sent):
         word = cand["token_str"].replace(" ", "")
-        # if word not in STOP_WORDS:  # skip stop words
-        if len(word) > 0:
+        # if word not in STOP_WORDS:  # skip by stop words
+        if len(word) > 0:   # skip by length
             cs.append({"word": word, "s0": cand["score"], "s1": 0.0, "s2": 0.0, "s3": 0.0})
     # print(cs)
 
