@@ -11,7 +11,7 @@ import json
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-CSG_MODEL_NAME = "SciBERT_CLOTH&DGen_model1"
+CSG_MODEL_NAME = "SciBERT_CLOTH_model1"
 # bert-base-uncased
 # allenai/scibert_scivocab_uncased
 PRETRAIN_MODEL_NAME = "allenai/scibert_scivocab_uncased"

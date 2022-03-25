@@ -11,7 +11,7 @@ import json
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-CSG_MODEL_NAME = "RoBERTa_CLOTH&DGen_model2"
+CSG_MODEL_NAME = "RoBERTa_CLOTH&DGen_model4"
 # bert-base-uncased
 # allenai/scibert_scivocab_uncased
 # roberta-base
