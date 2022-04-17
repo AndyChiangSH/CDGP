@@ -11,12 +11,14 @@ import json
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-CSG_MODEL_NAME = "SciBERT_model1"
+CSG_MODEL_NAME = "SciBERT_DGen_neg_model"
 # bert-base-uncased
 # allenai/scibert_scivocab_uncased
 PRETRAIN_MODEL_NAME = "allenai/scibert_scivocab_uncased"
 TOP_K = 10
-STOP_WORDS = ["[MASK]", "[SEP]", "[PAD]", "[CLS]"]
+# STOP_WORDS = ["[MASK]", "[SEP]", "[PAD]", "[CLS]"]
+WEIGHT = {"s0": 0.25, "s1": 0.25, "s2": 0.25, "s3": 0.25}
+# WEIGHT = {"s0": 0.6, "s1": 0.15, "s2": 0.15, "s3": 0.1}
 
 
 def main():
@@ -26,12 +28,12 @@ def main():
 
     # load CSG model
     tokenizer = BertTokenizer.from_pretrained(PRETRAIN_MODEL_NAME)
-    # config = BertConfig.from_pretrained(os.path.join(model_path, "config.json"))
-    csg_model = BertForMaskedLM.from_pretrained(PRETRAIN_MODEL_NAME)
-    # csg_model.eval()
+    config = BertConfig.from_pretrained(os.path.join(model_path, "config.json"))
+    csg_model = BertForMaskedLM.from_pretrained(os.path.join(model_path, "pytorch_model.bin"), config=config, from_tf=False)
+    csg_model.eval()
 
     # create unmasker
-    unmasker = pipeline('fill-mask', tokenizer=tokenizer, model=csg_model, top_k=TOP_K)
+    unmasker = pipeline('fill-mask', tokenizer=tokenizer, config=config, model=csg_model, top_k=TOP_K)
 
     # load DS model
     model_path = r"./models/DS/fasttext_model/wiki_en_ft_model01.bin"
@@ -65,7 +67,7 @@ def generate_dis(unmasker, ds_model, sent, answer):
     cs = list()
     for cand in unmasker(target_sent):
         word = cand["token_str"].replace(" ", "")
-        if word not in STOP_WORDS:  # skip stop words
+        if len(word) > 0:  # skip stop words
             cs.append({"word": word, "s0": cand["score"], "s1": 0.0, "s2": 0.0, "s3": 0.0})
     # print(cs)
 
@@ -150,7 +152,7 @@ def generate_dis(unmasker, ds_model, sent, answer):
     # 加上權重 (final score)
     cs_rank = list()
     for c in cs:
-        fs = 0.25*c["s0"] + 0.25*c["s1"] + 0.25*c["s2"] + 0.25*c["s3"]
+        fs = WEIGHT["s0"]*c["s0"] + WEIGHT["s1"]*c["s1"] + WEIGHT["s2"]*c["s2"] + WEIGHT["s3"]*c["s3"]
         cs_rank.append((c["word"], fs))
 
     cs_rank.sort(key = lambda x: x[1], reverse=True)

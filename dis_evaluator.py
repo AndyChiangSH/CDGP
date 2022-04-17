@@ -8,7 +8,7 @@ import csv
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-MODEL_NAME = "SciBERT_CLOTH_model1"
+MODEL_NAME = "SciBERT_DGen_neg_model"
 RESULT_NAME = "result_" + MODEL_NAME + ".json"
 
 
