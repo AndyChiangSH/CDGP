@@ -1,6 +1,6 @@
 from tqdm import tqdm
 import os
-from transformers import RobertaTokenizer, RobertaForMaskedLM, pipeline
+from transformers import BertTokenizer, BertConfig, BertForMaskedLM, pipeline
 import numpy as np
 import fasttext
 import nltk
@@ -11,14 +11,12 @@ import json
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-CSG_MODEL_NAME = "RoBERTa_CLOTH_model1"
+CSG_MODEL_NAME = "SciBERT_model1"
 # bert-base-uncased
 # allenai/scibert_scivocab_uncased
-# roberta-base
-PRETRAIN_MODEL_NAME = "roberta-base"
+PRETRAIN_MODEL_NAME = "allenai/scibert_scivocab_uncased"
 TOP_K = 10
-STOP_WORDS = ["<mask>", "<pad>", "<unk>", "<s>", "</s>", "\n", ">", "<", ""]
-min_len = 100
+STOP_WORDS = ["[MASK]", "[SEP]", "[PAD]", "[CLS]"]
 
 
 def main():
@@ -27,9 +25,10 @@ def main():
     print(f"Load CSG model at {model_path}...")
 
     # load CSG model
-    tokenizer = RobertaTokenizer.from_pretrained(PRETRAIN_MODEL_NAME)
-    csg_model = RobertaForMaskedLM.from_pretrained(model_path)
-    csg_model.eval()
+    tokenizer = BertTokenizer.from_pretrained(PRETRAIN_MODEL_NAME)
+    # config = BertConfig.from_pretrained(os.path.join(model_path, "config.json"))
+    csg_model = BertForMaskedLM.from_pretrained(PRETRAIN_MODEL_NAME)
+    # csg_model.eval()
 
     # create unmasker
     unmasker = pipeline('fill-mask', tokenizer=tokenizer, model=csg_model, top_k=TOP_K)
@@ -45,7 +44,7 @@ def main():
     print("Generate distractors...")
     dis_results = list()
     for question in tqdm(questions):
-        sent = question["sentence"].replace("**blank**", "<mask>").replace("\n", " ")
+        sent = question["sentence"].replace("**blank**", "[MASK]")
         answer = question["answer"]
         result = generate_dis(unmasker, ds_model, sent, answer)
         # print("result:", result)
@@ -56,24 +55,19 @@ def main():
     with open(f"./results/result_{CSG_MODEL_NAME}.json", "w") as file:
         json.dump(dis_results, file)
 
-    print(f"min_len = {min_len}")
     print("Done!")
 
 
 def generate_dis(unmasker, ds_model, sent, answer):
-    target_sent = sent + " </s> " + answer
+    target_sent = sent + " [SEP] " + answer
     # print(target_sent)
 
     cs = list()
     for cand in unmasker(target_sent):
         word = cand["token_str"].replace(" ", "")
-        # if word not in STOP_WORDS:  # skip by stop words
-        if len(word) > 0 and word not in STOP_WORDS:   # skip by length
+        if word not in STOP_WORDS:  # skip stop words
             cs.append({"word": word, "s0": cand["score"], "s1": 0.0, "s2": 0.0, "s3": 0.0})
     # print(cs)
-
-    global min_len
-    min_len = min(min_len, len(cs))
 
     # 0.模型信心分數
     s0s = [c["s0"] for c in cs]
@@ -102,14 +96,14 @@ def generate_dis(unmasker, ds_model, sent, answer):
 
     # 2.句子相似度
     #依據訓練過後的BERT所生成選項放入句子做比較
-    correct_sent = sent.replace('<mask>', answer)
+    correct_sent = sent.replace('[MASK]', answer)
     # print(correct_sent)
     # print("-"*100)
     correct_sent_vector = ds_model.get_sentence_vector(correct_sent)
 
     cand_sents = list()
     for c in cs:
-        cand_sents.append(sent.replace('<mask>', c["word"]))
+        cand_sents.append(sent.replace('[MASK]', c["word"]))
 
     sent_similarities = list()
     #兩句子距離
@@ -125,11 +119,11 @@ def generate_dis(unmasker, ds_model, sent, answer):
 
     # 3.詞性相似度
     origin_token = word_tokenize(sent)
-    origin_token.remove("<")
-    origin_token.remove(">")
+    origin_token.remove("[")
+    origin_token.remove("]")
     # print(origin_token)
 
-    mask_index = origin_token.index("mask")
+    mask_index = origin_token.index("MASK")
     # print(mask_index)
 
     correct_token = word_tokenize(correct_sent)
@@ -180,18 +174,15 @@ def similarity(v1, v2):
 
 # Min-Max 歸一化
 def min_max_y(raw_data):
-    # 裝進標準化後的新串列
-    min_max_data = []
-    
-    # 進行Min-Max標準化
-    for d in raw_data:
-        try:
-            min_max_data.append((d - min(raw_data)) / (max(raw_data) - min(raw_data)))
-        except ZeroDivisionError:
-            min_max_data.append(1)
-                
-    # 回傳結果
-    return min_max_data
+  # 裝進標準化後的新串列
+  min_max_data = []
+  
+  # 進行Min-Max標準化
+  for d in raw_data:
+    min_max_data.append((d - min(raw_data)) / (max(raw_data) - min(raw_data)))
+             
+  # 回傳結果
+  return min_max_data
 
 
 if __name__ == "__main__":
