@@ -8,16 +8,14 @@ from nltk.tokenize import word_tokenize
 import json
 
 # global variable
-# BERT_CLOTH_model
-# BERT_DGen_model1
-# BERT_CLOTH_DGen_model1
-CSG_MODEL_NAME = "RoBERTa_CLOTH_model1"
-# bert-base-uncased
-# allenai/scibert_scivocab_uncased
-# roberta-base
 PRETRAIN_MODEL_NAME = "roberta-base"
+CSG_MODEL_NAME = "RoBERTa_DGen_model4"
+TESTDATA_PATH = "./datasets/DGen/total_new_cleaned_test.json"
+TESTDATA = "DGen"
 TOP_K = 10
-STOP_WORDS = ["<mask>", "<pad>", "<unk>", "<s>", "</s>", "\n", ">", "<", ""]
+STOP_WORDS = ["\n", ">", "<", ""]
+WEIGHT = {"s0": 0.6, "s1": 0.15, "s2": 0.15, "s3": 0.1}
+QUESTION_LIMIT = -1
 min_len = 100
 
 
@@ -39,11 +37,12 @@ def main():
     print(f"Load DS model at {model_path}...")
     ds_model = fasttext.load_model(model_path)
 
-    with open("./datasets/DGen/total_new_cleaned_test.json", "r") as file:
+    with open(TESTDATA_PATH, "r") as file:
         questions = json.load(file)
 
     print("Generate distractors...")
     dis_results = list()
+    i = 0
     for question in tqdm(questions):
         sent = question["sentence"].replace("**blank**", "<mask>").replace("\n", " ")
         answer = question["answer"]
@@ -51,9 +50,13 @@ def main():
         # print("result:", result)
         dis_result = {"distractors": question["distractors"], "generations": result}
         dis_results.append(dis_result)
+        
+        i += 1
+        if i == QUESTION_LIMIT:
+            break
 
     print("Write to json file...")
-    with open(f"./results/result_{CSG_MODEL_NAME}.json", "w") as file:
+    with open(f"./results/result_{CSG_MODEL_NAME}_{TESTDATA}.json", "w") as file:
         json.dump(dis_results, file)
 
     print(f"min_len = {min_len}")
@@ -98,7 +101,7 @@ def generate_dis(unmasker, ds_model, sent, answer):
 
     for i, c in enumerate(cs):
         # print(c["word"], 1-word_similarities[i], 1-new_similarities[i])
-        c["s2"] = 1-new_similarities[i]
+        c["s1"] = 1-new_similarities[i]
 
     # 2.句子相似度
     #依據訓練過後的BERT所生成選項放入句子做比較
@@ -156,7 +159,7 @@ def generate_dis(unmasker, ds_model, sent, answer):
     # 加上權重 (final score)
     cs_rank = list()
     for c in cs:
-        fs = 0.25*c["s0"] + 0.25*c["s1"] + 0.25*c["s2"] + 0.25*c["s3"]
+        fs = WEIGHT["s0"]*c["s0"] + WEIGHT["s1"]*c["s1"] + WEIGHT["s2"]*c["s2"] + WEIGHT["s3"]*c["s3"]
         cs_rank.append((c["word"], fs))
 
     cs_rank.sort(key = lambda x: x[1], reverse=True)

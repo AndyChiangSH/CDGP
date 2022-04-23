@@ -11,8 +11,7 @@ import json
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-CSG_MODEL_NAME = "BERT_CLOTH_neg_model"
-# ./datasets/DGen/total_new_cleaned_test.json
+CSG_MODEL_NAME = "BERT_CLOTH_model"
 TESTDATA_PATH = "./datasets/CLOTH/CLOTH_cleaned_test.json"
 TESTDATA = "CLOTH"
 # bert-base-uncased
@@ -29,14 +28,15 @@ def main():
     model_path = os.path.join("./models/CSG/", CSG_MODEL_NAME)
     print(f"Load CSG model at {model_path}...")
 
-    # load CSG model
-    tokenizer = BertTokenizer.from_pretrained(PRETRAIN_MODEL_NAME)
-    config = BertConfig.from_pretrained(os.path.join(model_path, "config.json"))
-    csg_model = BertForMaskedLM.from_pretrained(os.path.join(model_path, "pytorch_model.bin"), config=config, from_tf=False)
-    csg_model.eval()
+    # # load CSG model
+    # tokenizer = BertTokenizer.from_pretrained(PRETRAIN_MODEL_NAME)
+    # # config = BertConfig.from_pretrained(os.path.join(model_path, "config.json"))
+    # csg_model = BertForMaskedLM.from_pretrained(PRETRAIN_MODEL_NAME)
+    # # csg_model.eval()
 
     # create unmasker
-    unmasker = pipeline('fill-mask', tokenizer=tokenizer, config=config, model=csg_model, top_k=TOP_K)
+    # unmasker = pipeline('fill-mask', tokenizer=tokenizer, model=csg_model, top_k=TOP_K)
+    unmasker = pipeline('fill-mask', model=PRETRAIN_MODEL_NAME)
 
     # load DS model
     model_path = r"./models/DS/fasttext_model/wiki_en_ft_model01.bin"
@@ -102,7 +102,7 @@ def generate_dis(unmasker, ds_model, sent, answer):
 
     for i, c in enumerate(cs):
         # print(c["word"], 1-word_similarities[i], 1-new_similarities[i])
-        c["s1"] = 1-new_similarities[i]
+        c["s2"] = 1-new_similarities[i]
 
     # 2.句子相似度
     #依據訓練過後的BERT所生成選項放入句子做比較

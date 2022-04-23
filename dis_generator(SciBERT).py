@@ -8,53 +8,63 @@ from nltk.tokenize import word_tokenize
 import json
 
 # global variable
-# BERT_CLOTH_model
-# BERT_DGen_model1
-# BERT_CLOTH_DGen_model1
-CSG_MODEL_NAME = "SciBERT_DGen_neg_model"
+CSG_MODEL_NAME = "SciBERT_DGen_model1"
+DS_MODEL_NAME = "fasttext_model/wiki_en_ft_model01.bin"
+TESTDATA_PATH = "./datasets/DGen/total_new_cleaned_test.json"
+# TESTDATA_PATH = "./datasets/CLOTH/CLOTH_cleaned_test.json"
+TESTDATA = "DGen"
 # bert-base-uncased
 # allenai/scibert_scivocab_uncased
 PRETRAIN_MODEL_NAME = "allenai/scibert_scivocab_uncased"
 TOP_K = 10
 # STOP_WORDS = ["[MASK]", "[SEP]", "[PAD]", "[CLS]"]
-WEIGHT = {"s0": 0.25, "s1": 0.25, "s2": 0.25, "s3": 0.25}
+WEIGHT = {"s0": 0.6, "s1": 0.15, "s2": 0.15, "s3": 0.1}
 # WEIGHT = {"s0": 0.6, "s1": 0.15, "s2": 0.15, "s3": 0.1}
+QUESTION_LIMIT = -1
 
 
 def main():
     # define CSG model path
-    model_path = os.path.join("./models/CSG/", CSG_MODEL_NAME)
-    print(f"Load CSG model at {model_path}...")
+    csg_model_path = os.path.join("./models/CSG/", CSG_MODEL_NAME)
+    print(f"Load CSG model at {csg_model_path}...")
 
     # load CSG model
     tokenizer = BertTokenizer.from_pretrained(PRETRAIN_MODEL_NAME)
-    config = BertConfig.from_pretrained(os.path.join(model_path, "config.json"))
-    csg_model = BertForMaskedLM.from_pretrained(os.path.join(model_path, "pytorch_model.bin"), config=config, from_tf=False)
+    config = BertConfig.from_pretrained(os.path.join(csg_model_path, "config.json"))
+    csg_model = BertForMaskedLM.from_pretrained(os.path.join(csg_model_path, "pytorch_model.bin"), config=config, from_tf=False)
     csg_model.eval()
+    
+    # tokenizer = BertTokenizer.from_pretrained(PRETRAIN_MODEL_NAME)
+    # csg_model = BertForMaskedLM.from_pretrained(PRETRAIN_MODEL_NAME)
 
     # create unmasker
-    unmasker = pipeline('fill-mask', tokenizer=tokenizer, config=config, model=csg_model, top_k=TOP_K)
+    unmasker = pipeline('fill-mask', tokenizer=tokenizer, model=csg_model, top_k=TOP_K)
 
     # load DS model
-    model_path = r"./models/DS/fasttext_model/wiki_en_ft_model01.bin"
-    print(f"Load DS model at {model_path}...")
-    ds_model = fasttext.load_model(model_path)
+    ds_model_path = os.path.join("./models/DS/", DS_MODEL_NAME)
+    print(f"Load DS model at {ds_model_path}...")
+    ds_model = fasttext.load_model(ds_model_path)
 
-    with open("./datasets/DGen/total_new_cleaned_test.json", "r") as file:
+    with open(TESTDATA_PATH, "r") as file:
         questions = json.load(file)
 
     print("Generate distractors...")
     dis_results = list()
+    i = 0
     for question in tqdm(questions):
-        sent = question["sentence"].replace("**blank**", "[MASK]")
+        sent = question["sentence"].replace("**blank**", "[MASK]").replace("\n", "")
         answer = question["answer"]
         result = generate_dis(unmasker, ds_model, sent, answer)
         # print("result:", result)
         dis_result = {"distractors": question["distractors"], "generations": result}
         dis_results.append(dis_result)
+        
+        i += 1
+        if i == QUESTION_LIMIT:
+            break
 
     print("Write to json file...")
-    with open(f"./results/result_{CSG_MODEL_NAME}.json", "w") as file:
+    with open(f"./results/result_{CSG_MODEL_NAME}_{TESTDATA}.json", "w") as file:
         json.dump(dis_results, file)
 
     print("Done!")
@@ -94,7 +104,7 @@ def generate_dis(unmasker, ds_model, sent, answer):
 
     for i, c in enumerate(cs):
         # print(c["word"], 1-word_similarities[i], 1-new_similarities[i])
-        c["s2"] = 1-new_similarities[i]
+        c["s1"] = 1-new_similarities[i]
 
     # 2.句子相似度
     #依據訓練過後的BERT所生成選項放入句子做比較

@@ -133,3 +133,4 @@ CDG-env/
 models/
 datasets/
 .vscode/
+test.py

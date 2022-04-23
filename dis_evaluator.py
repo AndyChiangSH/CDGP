@@ -8,8 +8,9 @@ import csv
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-MODEL_NAME = "SciBERT_DGen_neg_model"
-RESULT_NAME = "result_" + MODEL_NAME + ".json"
+TESTDATA = "CLOTH"
+MODEL_NAME = f"BERT_CLOTH_neg_model_{TESTDATA}"
+RESULT_NAME = f"result_{MODEL_NAME}.json"
 
 
 def main():
@@ -21,7 +22,7 @@ def main():
 
     # evaluating
     print("Evaluating...")
-    avg_eval = eval = {"P@1": 0.0, "P@3": 0.0, "R@3": 0.0, "F1@3": 0.0, "MRR": 0.0, "NDCG@10": 0.0}
+    avg_eval = {"P@1": 0.0, "P@3": 0.0, "R@3": 0.0, "F1@3": 0.0, "P@10": 0.0, "R@10": 0.0, "F1@10": 0.0, "MRR": 0.0, "NDCG@10": 0.0}
     for result in results:
         eval = evaluate(result)
         for k in avg_eval.keys():
@@ -53,7 +54,7 @@ def main():
 
 
 def evaluate(result):
-    eval = {"P@1": 0.0, "P@3": 0.0, "R@3": 0.0, "F1@3": 0.0, "MRR": 0.0, "NDCG@10": 0.0}
+    eval = {"P@1": 0.0, "P@3": 0.0, "R@3": 0.0, "F1@3": 0.0, "P@10": 0.0, "R@10": 0.0, "F1@10": 0.0, "MRR": 0.0, "NDCG@10": 0.0}
     distractors = [d.lower() for d in result["distractors"]]
     generations = [d.lower() for d in result["generations"]]
 
@@ -70,13 +71,25 @@ def evaluate(result):
     eval["P@3"] = relevants[:3].count(1) / 3
 
     # R@3
-    eval["R@3"] = relevants[:3].count(1) / 3
+    eval["R@3"] = relevants[:3].count(1) / len(distractors)
+    
+     # P@10
+    eval["P@10"] = relevants[:10].count(1) / 10
+
+    # R@10
+    eval["R@10"] = relevants[:10].count(1) / len(distractors)
 
     # F1@3
     try:
         eval["F1@3"] = (2 * eval["P@3"] * eval["R@3"]) / (eval["P@3"] + eval["R@3"])
     except ZeroDivisionError:
         eval["F1@3"] = 0
+        
+    # F1@10
+    try:
+        eval["F1@10"] = (2 * eval["P@10"] * eval["R@10"]) / (eval["P@10"] + eval["R@10"])
+    except ZeroDivisionError:
+        eval["F1@10"] = 0
     
     # MRR
     for i in range(len(relevants)):
