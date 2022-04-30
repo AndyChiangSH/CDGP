@@ -8,7 +8,7 @@ import os
 en2num = {"A": 0, "B": 1, "C": 2, "D": 3}
 num2en = ["A", "B", "C", "D"]
     
-with open("./datasets/CLOTH/test/high/high3629.json", "r") as f:
+with open("./datasets/CLOTH/test/high/high3624.json", "r") as f:
     dataset = json.load(f)
 
 sent = dataset["article"]
