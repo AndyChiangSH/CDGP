@@ -1,5 +1,6 @@
-# CDG
-Cloze Distractors Generation
+# CDGP
+
+CDGP: Automatic Cloze Distractor Generation based on Pre-trained Language Model
 
 ## 說明
 
