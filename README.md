@@ -1,6 +1,8 @@
 # CDGP
 
-CDGP: Automatic Cloze Distractor Generation based on Pre-trained Language Model
+「CDGP: Automatic Cloze Distractor Generation based on Pre-trained Language Model」
+
+[demo page](https://github.com/AndyChiangSH/CDGP-demo)
 
 ## 說明
 
