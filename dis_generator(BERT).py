@@ -11,10 +11,11 @@ import json
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-CSG_MODEL_NAME = "BERT_CLOTH_200_model"
+CSG_MODEL_NAME = "BERT_CLOTH_valid_model"
 # ./datasets/DGen/total_new_cleaned_test.json
+# ./datasets/filter_cloth_test_cleaned.json
 TESTDATA_PATH = "./datasets/CLOTH/CLOTH_cleaned_test.json"
-TESTDATA = "CLOTH"
+TESTDATA = "filter"
 # bert-base-uncased
 # allenai/scibert_scivocab_uncased
 PRETRAIN_MODEL_NAME = "bert-base-uncased"
@@ -46,6 +47,7 @@ def main():
     print(f"Load DS model at {model_path}...")
     ds_model = fasttext.load_model(model_path)
 
+    print(f"Test dataset at {TESTDATA_PATH}...")
     with open(TESTDATA_PATH, "r") as file:
         questions = json.load(file)
 
