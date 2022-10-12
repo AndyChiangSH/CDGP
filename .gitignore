@@ -128,9 +128,20 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# my ignore
+# My ignore
+
+# env
 .vscode/
 CDG-env/
+
+# others
 others/
-datasets/
+
+# datasets
+datasets/AI2/
+datasets/CLOTH/
+datasets/DGen/
+datasets/SciQ/
+
+# models
 models/
