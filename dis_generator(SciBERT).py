@@ -8,19 +8,19 @@ from nltk.tokenize import word_tokenize
 import json
 
 # global variable
-CSG_MODEL_NAME = "SciBERT_DGen_model1"
+CSG_MODEL_NAME = "SciBERT_CLOTH_model1"
 DS_MODEL_NAME = "fasttext_model/wiki_en_ft_model01.bin"
-TESTDATA_PATH = "./datasets/DGen/total_new_cleaned_test.json"
-# TESTDATA_PATH = "./datasets/CLOTH/CLOTH_cleaned_test.json"
-TESTDATA = "DGen"
+# TESTDATA_PATH = "./datasets/DGen/total_new_cleaned_test.json"
+TESTDATA_PATH = "./datasets/CLOTH/CLOTH_cleaned_test.json"
+TESTDATA = "CLOTH"
 # bert-base-uncased
 # allenai/scibert_scivocab_uncased
 PRETRAIN_MODEL_NAME = "allenai/scibert_scivocab_uncased"
 TOP_K = 10
 # STOP_WORDS = ["[MASK]", "[SEP]", "[PAD]", "[CLS]"]
-WEIGHT = {"s0": 0.6, "s1": 0.15, "s2": 0.15, "s3": 0.1}
+WEIGHT = {"s0": 0.25, "s1": 0.25, "s2": 0.25, "s3": 0.25}
 # WEIGHT = {"s0": 0.6, "s1": 0.15, "s2": 0.15, "s3": 0.1}
-QUESTION_LIMIT = -1
+QUESTION_LIMIT = 1000
 
 
 def main():
@@ -30,15 +30,18 @@ def main():
 
     # load CSG model
     tokenizer = BertTokenizer.from_pretrained(PRETRAIN_MODEL_NAME)
-    config = BertConfig.from_pretrained(os.path.join(csg_model_path, "config.json"))
-    csg_model = BertForMaskedLM.from_pretrained(os.path.join(csg_model_path, "pytorch_model.bin"), config=config, from_tf=False)
+    config = BertConfig.from_pretrained(
+        os.path.join(csg_model_path, "config.json"))
+    csg_model = BertForMaskedLM.from_pretrained(os.path.join(
+        csg_model_path, "pytorch_model.bin"), config=config, from_tf=False)
     csg_model.eval()
-    
+
     # tokenizer = BertTokenizer.from_pretrained(PRETRAIN_MODEL_NAME)
     # csg_model = BertForMaskedLM.from_pretrained(PRETRAIN_MODEL_NAME)
 
     # create unmasker
-    unmasker = pipeline('fill-mask', tokenizer=tokenizer, model=csg_model, top_k=TOP_K)
+    unmasker = pipeline('fill-mask', tokenizer=tokenizer,
+                        model=csg_model, top_k=TOP_K)
 
     # load DS model
     ds_model_path = os.path.join("./models/DS/", DS_MODEL_NAME)
@@ -52,13 +55,15 @@ def main():
     dis_results = list()
     i = 0
     for question in tqdm(questions):
-        sent = question["sentence"].replace("**blank**", "[MASK]").replace("\n", "")
+        sent = question["sentence"].replace(
+            "**blank**", "[MASK]").replace("\n", "")
         answer = question["answer"]
         result = generate_dis(unmasker, ds_model, sent, answer)
         # print("result:", result)
-        dis_result = {"distractors": question["distractors"], "generations": result}
+        dis_result = {
+            "distractors": question["distractors"], "generations": result}
         dis_results.append(dis_result)
-        
+
         i += 1
         if i == QUESTION_LIMIT:
             break
@@ -78,7 +83,8 @@ def generate_dis(unmasker, ds_model, sent, answer):
     for cand in unmasker(target_sent):
         word = cand["token_str"].replace(" ", "")
         if len(word) > 0:  # skip stop words
-            cs.append({"word": word, "s0": cand["score"], "s1": 0.0, "s2": 0.0, "s3": 0.0})
+            cs.append(
+                {"word": word, "s0": cand["score"], "s1": 0.0, "s2": 0.0, "s3": 0.0})
     # print(cs)
 
     # 0.模型信心分數
@@ -88,7 +94,7 @@ def generate_dis(unmasker, ds_model, sent, answer):
     for i, c in enumerate(cs):
         # print(c["word"], new_s0s[i])
         c["s0"] = new_s0s[i]
-    
+
     # 1.單字相似度
     # print(answer)
     # print("-"*100)
@@ -107,7 +113,7 @@ def generate_dis(unmasker, ds_model, sent, answer):
         c["s1"] = 1-new_similarities[i]
 
     # 2.句子相似度
-    #依據訓練過後的BERT所生成選項放入句子做比較
+    # 依據訓練過後的BERT所生成選項放入句子做比較
     correct_sent = sent.replace('[MASK]', answer)
     # print(correct_sent)
     # print("-"*100)
@@ -118,7 +124,7 @@ def generate_dis(unmasker, ds_model, sent, answer):
         cand_sents.append(sent.replace('[MASK]', c["word"]))
 
     sent_similarities = list()
-    #兩句子距離
+    # 兩句子距離
     for cand_sent in cand_sents:
         cand_sent_vector = ds_model.get_sentence_vector(cand_sent)
         sent_similarity = similarity(correct_sent_vector, cand_sent_vector)
@@ -156,16 +162,17 @@ def generate_dis(unmasker, ds_model, sent, answer):
             c["s3"] = 1.0
         else:
             c["s3"] = 0.0
-        
+
         # print(cand_pos, c["s3"])
 
     # 加上權重 (final score)
     cs_rank = list()
     for c in cs:
-        fs = WEIGHT["s0"]*c["s0"] + WEIGHT["s1"]*c["s1"] + WEIGHT["s2"]*c["s2"] + WEIGHT["s3"]*c["s3"]
+        fs = WEIGHT["s0"]*c["s0"] + WEIGHT["s1"]*c["s1"] + \
+            WEIGHT["s2"]*c["s2"] + WEIGHT["s3"]*c["s3"]
         cs_rank.append((c["word"], fs))
 
-    cs_rank.sort(key = lambda x: x[1], reverse=True)
+    cs_rank.sort(key=lambda x: x[1], reverse=True)
     # print("cs_rank:", cs_rank)
 
     # Top 3
@@ -186,15 +193,16 @@ def similarity(v1, v2):
 
 # Min-Max 歸一化
 def min_max_y(raw_data):
-  # 裝進標準化後的新串列
-  min_max_data = []
-  
-  # 進行Min-Max標準化
-  for d in raw_data:
-    min_max_data.append((d - min(raw_data)) / (max(raw_data) - min(raw_data)))
-             
-  # 回傳結果
-  return min_max_data
+    # 裝進標準化後的新串列
+    min_max_data = []
+
+    # 進行Min-Max標準化
+    for d in raw_data:
+        min_max_data.append((d - min(raw_data)) /
+                            (max(raw_data) - min(raw_data)))
+
+    # 回傳結果
+    return min_max_data
 
 
 if __name__ == "__main__":

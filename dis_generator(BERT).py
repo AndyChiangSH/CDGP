@@ -11,17 +11,18 @@ import json
 # BERT_CLOTH_model
 # BERT_DGen_model1
 # BERT_CLOTH_DGen_model1
-CSG_MODEL_NAME = "BERT_CLOTH_valid_model"
+CSG_MODEL_NAME = "BERT_CLOTH_model"
 # ./datasets/DGen/total_new_cleaned_test.json
 # ./datasets/filter_cloth_test_cleaned.json
-TESTDATA_PATH = "./datasets/CLOTH/CLOTH_cleaned_test.json"
-TESTDATA = "filter"
+TESTDATA_PATH = "./datasets/CLOTH/CLOTH_valid_cleaned.json"
+TESTDATA = "CLOTH"
 # bert-base-uncased
 # allenai/scibert_scivocab_uncased
 PRETRAIN_MODEL_NAME = "bert-base-uncased"
 TOP_K = 10
 # STOP_WORDS = ["[MASK]", "[SEP]", "[PAD]", "[CLS]"]
-WEIGHT = {"s0": 0.6, "s1": 0.15, "s2": 0.15, "s3": 0.1}
+WEIGHT = {"s0": 0, "s1": 0, "s2": 0, "s3": 1}
+# WEIGHT = {"s0": 0.25, "s1": 0.25, "s2": 0.25, "s3": 0.25}
 QUESTION_LIMIT = 1000
 
 
@@ -68,7 +69,7 @@ def main():
         if i == QUESTION_LIMIT:
             break
 
-    print("Write to json file...")
+    print(f"Save to 'result_{CSG_MODEL_NAME}_{TESTDATA}.json'..")
     with open(f"./results/result_{CSG_MODEL_NAME}_{TESTDATA}.json", "w") as file:
         json.dump(dis_results, file)
 

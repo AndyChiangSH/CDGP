@@ -129,9 +129,8 @@ dmypy.json
 .pyre/
 
 # my ignore
+.vscode/
 CDG-env/
+archive/
 models/
 datasets/
-.vscode/
-archive/
-test.py
