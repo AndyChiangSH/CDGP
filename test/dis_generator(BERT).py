@@ -1,47 +1,43 @@
 from tqdm import tqdm
 import os
-from transformers import BertTokenizer, BertConfig, BertForMaskedLM, pipeline
+from transformers import BertTokenizer, BertForMaskedLM, pipeline
 import numpy as np
 import fasttext
 import nltk
 from nltk.tokenize import word_tokenize
 import json
 
-# Global variable
-# BERT_CLOTH_model
-# BERT_DGen_model1
-# BERT_CLOTH_DGen_model1
-CSG_MODEL = "../models/CSG/BERT_CLOTH_model"
-DS_MODEL = "../models/DS/fasttext_model/wiki_en_ft_model01.bin"
-# ./datasets/DGen/total_new_cleaned_test.json
-# ./datasets/filter_cloth_test_cleaned.json
+# Global variables
+CSG_MODEL = "AndyChiang/cdgp-csg-bert-cloth"
+DS_MODEL = "../models/DS/cdgp-ds-fasttext.bin"
 DATASET = "../datasets/CLOTH/CLOTH_valid_cleaned.json"
 RESULT = "BERT_CLOTH_model"
-PRETRAIN_MODEL = "bert-base-uncased"
 TOP_K = 10
-# STOP_WORDS = ["[MASK]", "[SEP]", "[PAD]", "[CLS]"]
+STOP_WORDS = ["[MASK]", "[SEP]", "[PAD]", "[CLS]"]
 WEIGHT = {"s0": 0.6, "s1": 0.15, "s2": 0.15, "s3": 0.1}
 # WEIGHT = {"s0": 0.25, "s1": 0.25, "s2": 0.25, "s3": 0.25}
-QUESTION_LIMIT = 1000
+QUESTION_LIMIT = 100
 
 
 def main():
-    # load CSG model
+    # Load CSG model
     print(f"Load CSG model at {CSG_MODEL}...")
-    tokenizer = BertTokenizer.from_pretrained(PRETRAIN_MODEL)
+    tokenizer = BertTokenizer.from_pretrained(CSG_MODEL)
     csg_model = BertForMaskedLM.from_pretrained(CSG_MODEL)
 
-    # create unmasker
+    # Create unmasker
     unmasker = pipeline('fill-mask', tokenizer=tokenizer, model=csg_model, top_k=TOP_K)
 
-    # load DS model
+    # Load DS model
     print(f"Load DS model at {DS_MODEL}...")
     ds_model = fasttext.load_model(DS_MODEL)
 
+    # Load test dataset
     print(f"Test dataset at {DATASET}...")
     with open(DATASET, "r") as file:
         questions = json.load(file)
 
+    # Generate distractors
     print("Generate distractors...")
     dis_results = list()
     i = 0
@@ -57,6 +53,7 @@ def main():
         if i == QUESTION_LIMIT:
             break
 
+    # Save result
     print(f"Save to 'result_{RESULT}.json'..")
     with open(f"./results/result_{RESULT}.json", "w") as file:
         json.dump(dis_results, file)
@@ -65,34 +62,30 @@ def main():
 
 
 def generate_dis(unmasker, ds_model, sent, answer):
+    # Answer relating
     target_sent = sent + " [SEP] " + answer
     # print(target_sent)
 
+    # Generate Candidate Set
     cs = list()
     for cand in unmasker(target_sent):
         word = cand["token_str"].replace(" ", "")
-        if len(word) > 0:  # skip stop words
-            cs.append(
-                {"word": word, "s0": cand["score"], "s1": 0.0, "s2": 0.0, "s3": 0.0})
-    # print(cs)
+        if len(word) > 0:  # Skip stop words
+            cs.append({"word": word, "s0": cand["score"], "s1": 0.0, "s2": 0.0, "s3": 0.0})
 
-    # 0.模型信心分數
+    # Confidence Score s0
     s0s = [c["s0"] for c in cs]
     new_s0s = min_max_y(s0s)
 
     for i, c in enumerate(cs):
-        # print(c["word"], new_s0s[i])
         c["s0"] = new_s0s[i]
 
-    # 1.單字相似度
-    # print(answer)
-    # print("-"*100)
+    # Word Embedding Similarity s1
     answer_vector = ds_model.get_word_vector(answer)
-
     word_similarities = list()
     for c in cs:
         c_vector = ds_model.get_word_vector(c["word"])
-        word_similarity = similarity(answer_vector, c_vector)
+        word_similarity = similarity(answer_vector, c_vector)   # Cosine similarity between A and Di
         word_similarities.append(word_similarity)
 
     new_similarities = min_max_y(word_similarities)
@@ -101,11 +94,8 @@ def generate_dis(unmasker, ds_model, sent, answer):
         # print(c["word"], 1-word_similarities[i], 1-new_similarities[i])
         c["s1"] = 1-new_similarities[i]
 
-    # 2.句子相似度
-    # 依據訓練過後的BERT所生成選項放入句子做比較
+    # Contextual-Sentence Embedding Similarity s2
     correct_sent = sent.replace('[MASK]', answer)
-    # print(correct_sent)
-    # print("-"*100)
     correct_sent_vector = ds_model.get_sentence_vector(correct_sent)
 
     cand_sents = list()
@@ -113,10 +103,9 @@ def generate_dis(unmasker, ds_model, sent, answer):
         cand_sents.append(sent.replace('[MASK]', c["word"]))
 
     sent_similarities = list()
-    # 兩句子距離
     for cand_sent in cand_sents:
         cand_sent_vector = ds_model.get_sentence_vector(cand_sent)
-        sent_similarity = similarity(correct_sent_vector, cand_sent_vector)
+        sent_similarity = similarity(correct_sent_vector, cand_sent_vector) # Cosine similarity between S(A) and S(Di)
         sent_similarities.append(sent_similarity)
 
     new_similarities = min_max_y(sent_similarities)
@@ -124,7 +113,7 @@ def generate_dis(unmasker, ds_model, sent, answer):
         # print(cand_sents[i], 1-sent_similarities[i], 1-new_similarities[i])
         c["s2"] = 1-new_similarities[i]
 
-    # 3.詞性相似度
+    # POS match score s3
     origin_token = word_tokenize(sent)
     origin_token.remove("[")
     origin_token.remove("]")
@@ -138,27 +127,24 @@ def generate_dis(unmasker, ds_model, sent, answer):
     correct_pos = nltk.pos_tag(correct_token)
     # print(correct_pos)
 
-    answer_pos = correct_pos[mask_index]
+    answer_pos = correct_pos[mask_index]    # POS of A
     # print(answer_pos)
     # print("-"*100)
 
     for i, c in enumerate(cs):
         cand_sent_token = word_tokenize(cand_sents[i])
         cand_sent_pos = nltk.pos_tag(cand_sent_token)
-        cand_pos = cand_sent_pos[mask_index]
+        cand_pos = cand_sent_pos[mask_index]    # POS of Di
 
         if cand_pos[1] == answer_pos[1]:
             c["s3"] = 1.0
         else:
             c["s3"] = 0.0
 
-        # print(cand_pos, c["s3"])
-
-    # 加上權重 (final score)
+    # Weighted final score
     cs_rank = list()
     for c in cs:
-        fs = WEIGHT["s0"]*c["s0"] + WEIGHT["s1"]*c["s1"] + \
-            WEIGHT["s2"]*c["s2"] + WEIGHT["s3"]*c["s3"]
+        fs = WEIGHT["s0"]*c["s0"] + WEIGHT["s1"]*c["s1"] + WEIGHT["s2"]*c["s2"] + WEIGHT["s3"]*c["s3"]
         cs_rank.append((c["word"], fs))
 
     cs_rank.sort(key=lambda x: x[1], reverse=True)
@@ -170,27 +156,24 @@ def generate_dis(unmasker, ds_model, sent, answer):
     return result
 
 
-# cosine similarity
+# Cosine similarity
 def similarity(v1, v2):
     n1 = np.linalg.norm(v1)
     n2 = np.linalg.norm(v2)
-    if n1 == 0 or n2 == 0:
+    if n1 == 0 or n2 == 0:  # Denominator can not be zero
         return 1
     else:
         return np.dot(v1, v2) / (n1 * n2)
 
 
-# Min-Max 歸一化
+# Min–max normalization
 def min_max_y(raw_data):
-    # 裝進標準化後的新串列
     min_max_data = []
 
-    # 進行Min-Max標準化
+    # Min–max normalization
     for d in raw_data:
-        min_max_data.append((d - min(raw_data)) /
-                            (max(raw_data) - min(raw_data)))
+        min_max_data.append((d - min(raw_data)) / (max(raw_data) - min(raw_data)))
 
-    # 回傳結果
     return min_max_data
 
 

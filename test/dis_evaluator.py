@@ -10,7 +10,7 @@ import csv
 # BERT_CLOTH_DGen_model1
 # result_BERT_CLOTH_model_filter
 # SciBERT_DGen_model1_DGen
-MODEL_NAME = "BERT_CLOTH_model_CLOTH"
+MODEL_NAME = "BERT_CLOTH_model"
 RESULT_NAME = f"result_{MODEL_NAME}.json"
 
 
