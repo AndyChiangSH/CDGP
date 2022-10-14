@@ -10,7 +10,7 @@ import json
 # Global variables
 CSG_MODEL = "AndyChiang/cdgp-csg-bert-cloth"
 DS_MODEL = "../models/DS/cdgp-ds-fasttext.bin"
-DATASET = "../datasets/CLOTH/CLOTH_valid_cleaned.json"
+DATASET = "../datasets/CLOTH/CLOTH_test_cleaned.json"
 RESULT = "BERT_CLOTH_model"
 TOP_K = 10
 STOP_WORDS = ["[MASK]", "[SEP]", "[PAD]", "[CLS]"]
@@ -45,7 +45,6 @@ def main():
         sent = question["sentence"].replace("**blank**", "[MASK]").replace("\n", "")
         answer = question["answer"]
         result = generate_dis(unmasker, ds_model, sent, answer)
-        # print("result:", result)
         dis_result = {"distractors": question["distractors"], "generations": result}
         dis_results.append(dis_result)
 
@@ -64,7 +63,6 @@ def main():
 def generate_dis(unmasker, ds_model, sent, answer):
     # Answer relating
     target_sent = sent + " [SEP] " + answer
-    # print(target_sent)
 
     # Generate Candidate Set
     cs = list()
@@ -91,7 +89,6 @@ def generate_dis(unmasker, ds_model, sent, answer):
     new_similarities = min_max_y(word_similarities)
 
     for i, c in enumerate(cs):
-        # print(c["word"], 1-word_similarities[i], 1-new_similarities[i])
         c["s1"] = 1-new_similarities[i]
 
     # Contextual-Sentence Embedding Similarity s2
@@ -110,26 +107,18 @@ def generate_dis(unmasker, ds_model, sent, answer):
 
     new_similarities = min_max_y(sent_similarities)
     for i, c in enumerate(cs):
-        # print(cand_sents[i], 1-sent_similarities[i], 1-new_similarities[i])
         c["s2"] = 1-new_similarities[i]
 
     # POS match score s3
     origin_token = word_tokenize(sent)
     origin_token.remove("[")
     origin_token.remove("]")
-    # print(origin_token)
 
     mask_index = origin_token.index("MASK")
-    # print(mask_index)
-
+    
     correct_token = word_tokenize(correct_sent)
-    # print(correct_token)
     correct_pos = nltk.pos_tag(correct_token)
-    # print(correct_pos)
-
     answer_pos = correct_pos[mask_index]    # POS of A
-    # print(answer_pos)
-    # print("-"*100)
 
     for i, c in enumerate(cs):
         cand_sent_token = word_tokenize(cand_sents[i])
@@ -148,7 +137,6 @@ def generate_dis(unmasker, ds_model, sent, answer):
         cs_rank.append((c["word"], fs))
 
     cs_rank.sort(key=lambda x: x[1], reverse=True)
-    # print("cs_rank:", cs_rank)
 
     # Top 3
     result = [d[0] for d in cs_rank[:10]]
