@@ -1,6 +1,12 @@
+"""
+Distractor Generator (SciBERT)
+Author: AndyChiangSH
+Time: 2022/10/14
+"""
+
 from tqdm import tqdm
 import os
-from transformers import BertTokenizer, BertConfig, BertForMaskedLM, pipeline
+from transformers import BertTokenizer, BertForMaskedLM, pipeline
 import numpy as np
 import fasttext
 import nltk
@@ -8,11 +14,11 @@ from nltk.tokenize import word_tokenize
 import json
 
 
-# global variables
+# Global variables
 CSG_MODEL = "AndyChiang/cdgp-csg-scibert-cloth"
 DS_MODEL = "../models/DS/cdgp-ds-fasttext.bin"
 DATASET = "../datasets/CLOTH/CLOTH_test_cleaned.json"
-RESULT = "BERT_CLOTH_model"
+RESULT = "SciBERT_CLOTH_model"
 TOP_K = 10
 STOP_WORDS = ["[MASK]", "[SEP]", "[PAD]", "[CLS]"]
 WEIGHT = {"s0": 0.6, "s1": 0.15, "s2": 0.15, "s3": 0.1}
@@ -26,7 +32,7 @@ def main():
     tokenizer = BertTokenizer.from_pretrained(CSG_MODEL)
     csg_model = BertForMaskedLM.from_pretrained(CSG_MODEL)
 
-    # Create unmasker
+    # Create a unmasker
     unmasker = pipeline('fill-mask', tokenizer=tokenizer, model=csg_model, top_k=TOP_K)
 
     # Load DS model
@@ -43,7 +49,7 @@ def main():
     dis_results = list()
     i = 0
     for question in tqdm(questions):
-        sent = question["sentence"].replace("**blank**", "[MASK]").replace("\n", "")
+        sent = question["sentence"].replace("\n", "")
         answer = question["answer"]
         result = generate_dis(unmasker, ds_model, sent, answer)
         # print("result:", result)
@@ -71,7 +77,7 @@ def generate_dis(unmasker, ds_model, sent, answer):
     cs = list()
     for cand in unmasker(target_sent):
         word = cand["token_str"].replace(" ", "")
-        if len(word) > 0:  # Skip stop words
+        if len(word) > 0:  # Skip empty
             cs.append({"word": word, "s0": cand["score"], "s1": 0.0, "s2": 0.0, "s3": 0.0})
 
     # Confidence Score s0
@@ -141,10 +147,11 @@ def generate_dis(unmasker, ds_model, sent, answer):
             WEIGHT["s2"]*c["s2"] + WEIGHT["s3"]*c["s3"]
         cs_rank.append((c["word"], fs))
 
+    # Rank by final score
     cs_rank.sort(key=lambda x: x[1], reverse=True)
 
-    # Top 3
-    result = [d[0] for d in cs_rank[:10]]
+    # Top K
+    result = [d[0] for d in cs_rank[:TOP_K]]
 
     return result
 
@@ -171,5 +178,5 @@ def min_max_y(raw_data):
 
 
 if __name__ == "__main__":
-    print("Start!")
+    print("Distractor Generator (SciBERT) Start!")
     main()

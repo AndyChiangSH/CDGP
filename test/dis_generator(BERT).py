@@ -1,3 +1,9 @@
+"""
+Distractor Generator (BERT)
+Author: AndyChiangSH
+Time: 2022/10/14
+"""
+
 from tqdm import tqdm
 import os
 from transformers import BertTokenizer, BertForMaskedLM, pipeline
@@ -6,6 +12,7 @@ import fasttext
 import nltk
 from nltk.tokenize import word_tokenize
 import json
+
 
 # Global variables
 CSG_MODEL = "AndyChiang/cdgp-csg-bert-cloth"
@@ -25,7 +32,7 @@ def main():
     tokenizer = BertTokenizer.from_pretrained(CSG_MODEL)
     csg_model = BertForMaskedLM.from_pretrained(CSG_MODEL)
 
-    # Create unmasker
+    # Create a unmasker
     unmasker = pipeline('fill-mask', tokenizer=tokenizer, model=csg_model, top_k=TOP_K)
 
     # Load DS model
@@ -42,7 +49,7 @@ def main():
     dis_results = list()
     i = 0
     for question in tqdm(questions):
-        sent = question["sentence"].replace("**blank**", "[MASK]").replace("\n", "")
+        sent = question["sentence"].replace("\n", "")
         answer = question["answer"]
         result = generate_dis(unmasker, ds_model, sent, answer)
         dis_result = {"distractors": question["distractors"], "generations": result}
@@ -60,6 +67,7 @@ def main():
     print("Done!")
 
 
+# Generate distractors of one question
 def generate_dis(unmasker, ds_model, sent, answer):
     # Answer relating
     target_sent = sent + " [SEP] " + answer
@@ -68,7 +76,7 @@ def generate_dis(unmasker, ds_model, sent, answer):
     cs = list()
     for cand in unmasker(target_sent):
         word = cand["token_str"].replace(" ", "")
-        if len(word) > 0:  # Skip stop words
+        if len(word) > 0:  # Skip empty
             cs.append({"word": word, "s0": cand["score"], "s1": 0.0, "s2": 0.0, "s3": 0.0})
 
     # Confidence Score s0
@@ -136,10 +144,11 @@ def generate_dis(unmasker, ds_model, sent, answer):
         fs = WEIGHT["s0"]*c["s0"] + WEIGHT["s1"]*c["s1"] + WEIGHT["s2"]*c["s2"] + WEIGHT["s3"]*c["s3"]
         cs_rank.append((c["word"], fs))
 
+    # Rank by final score
     cs_rank.sort(key=lambda x: x[1], reverse=True)
 
-    # Top 3
-    result = [d[0] for d in cs_rank[:10]]
+    # Top K
+    result = [d[0] for d in cs_rank[:TOP_K]]
 
     return result
 
@@ -166,5 +175,5 @@ def min_max_y(raw_data):
 
 
 if __name__ == "__main__":
-    print("Start!")
+    print("Distractor Generator (BERT) Start!")
     main()
