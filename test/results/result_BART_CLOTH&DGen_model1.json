@@ -1,0 +1,4911 @@
+[
+    {
+        "distractors": [
+            "enzyme",
+            "isolate",
+            "amino"
+        ],
+        "generations": [
+            "r",
+            "d",
+            "t",
+            "b",
+            "g",
+            "pl",
+            "c",
+            "l",
+            "ep",
+            "pro"
+        ]
+    },
+    {
+        "distractors": [
+            "endoscopic",
+            "symbiotic",
+            "mutualistic"
+        ],
+        "generations": [
+            "carniv",
+            "d",
+            "cinem",
+            "c",
+            "omn",
+            "lar",
+            "spor",
+            "pand",
+            "fungi",
+            "bacteria"
+        ]
+    },
+    {
+        "distractors": [
+            "dioxide",
+            "carbon",
+            "sulphur"
+        ],
+        "generations": [
+            "carbon",
+            "chlor",
+            "air",
+            "ozone",
+            "oxygen",
+            "ign",
+            "a",
+            "st",
+            "pollen",
+            "nitrogen"
+        ]
+    },
+    {
+        "distractors": [
+            "ovaries",
+            "intestines",
+            "kidneys"
+        ],
+        "generations": [
+            "lungs",
+            "ears",
+            "legs",
+            "noses",
+            "arteries",
+            "kidneys",
+            "nose",
+            "liver",
+            "lung",
+            "stomach"
+        ]
+    },
+    {
+        "distractors": [
+            "carbon",
+            "hydrogen",
+            "nitrogen"
+        ],
+        "generations": [
+            "carbon",
+            "milk",
+            "air",
+            "plastic",
+            "water",
+            "plasma",
+            "calcium",
+            "oxygen",
+            "nitrogen",
+            "hydrogen"
+        ]
+    },
+    {
+        "distractors": [
+            "kinetic",
+            "electromagnetic",
+            "weight"
+        ],
+        "generations": [
+            "f",
+            "b",
+            "w",
+            "mag",
+            "ge",
+            "color",
+            "sound",
+            "electricity",
+            "gravity",
+            "me"
+        ]
+    },
+    {
+        "distractors": [
+            "granite",
+            "sedementary",
+            "metamorphic"
+        ],
+        "generations": [
+            "ge",
+            "met",
+            "t",
+            "eous",
+            "b",
+            "s",
+            "f",
+            "str",
+            "r",
+            "ign"
+        ]
+    },
+    {
+        "distractors": [
+            "leaves",
+            "stems",
+            "roots"
+        ],
+        "generations": [
+            "leaves",
+            "roots",
+            "plants",
+            "flowers",
+            "seeds",
+            "vegetables",
+            "spores",
+            "fruits",
+            "soil",
+            "fruit"
+        ]
+    },
+    {
+        "distractors": [
+            "erosion",
+            "electrolysis",
+            "reproduction"
+        ],
+        "generations": [
+            "absorption",
+            "precipitation",
+            "insulation",
+            "recall",
+            "synthesis",
+            "reproduction",
+            "oxidation",
+            "metabolism",
+            "radiation",
+            "photos"
+        ]
+    },
+    {
+        "distractors": [
+            "Undrate",
+            "obovate",
+            "ovate"
+        ],
+        "generations": [
+            "t",
+            "a",
+            "\"",
+            "o",
+            "m",
+            "or",
+            "an",
+            "so",
+            "the",
+            "v"
+        ]
+    },
+    {
+        "distractors": [
+            "sound",
+            "microwaves",
+            "light"
+        ],
+        "generations": [
+            "TV",
+            "radio",
+            "electricity",
+            "radiation",
+            "air",
+            "television",
+            "frequency",
+            "plasma",
+            "sound",
+            "radios"
+        ]
+    },
+    {
+        "distractors": [
+            "refract",
+            "adduce",
+            "reflect"
+        ],
+        "generations": [
+            "control",
+            "frequency",
+            "ev",
+            "recall",
+            "alarm",
+            "interrupt",
+            "cond",
+            "feedback",
+            "friction",
+            "energy"
+        ]
+    },
+    {
+        "distractors": [
+            "flow",
+            "displacement",
+            "acceleration"
+        ],
+        "generations": [
+            "frequency",
+            "velocity",
+            "shape",
+            "temperature",
+            "direction",
+            "time",
+            "rate",
+            ",",
+            "speed",
+            "height"
+        ]
+    },
+    {
+        "distractors": [
+            "aggressive",
+            "immune",
+            "cardiac"
+        ],
+        "generations": [
+            "sexual",
+            "carniv",
+            "reproductive",
+            "digestive",
+            "reproduction",
+            "nucle",
+            "sex",
+            "sperm",
+            "sexually",
+            "metabolism"
+        ]
+    },
+    {
+        "distractors": [
+            "proteins",
+            "carbohydrates",
+            "plasma"
+        ],
+        "generations": [
+            "mitochond",
+            "c",
+            "spor",
+            "sperm",
+            "nucle",
+            "nucleus",
+            "eggs",
+            "lungs",
+            "bacteria",
+            "cells"
+        ]
+    },
+    {
+        "distractors": [
+            "vegetation",
+            "reproduction",
+            "hibernation"
+        ],
+        "generations": [
+            "ger",
+            "poll",
+            "agriculture",
+            "reproduction",
+            "precipitation",
+            "production",
+            "communication",
+            "insulation",
+            "migration",
+            "carniv"
+        ]
+    },
+    {
+        "distractors": [
+            "DNA",
+            "RNA",
+            "codons"
+        ],
+        "generations": [
+            "lungs",
+            "genes",
+            "eggs",
+            "cells",
+            "proteins",
+            "chromosomes",
+            "mutations",
+            "sperm",
+            "nucle",
+            "nucleus"
+        ]
+    },
+    {
+        "distractors": [
+            "rain",
+            "chloride",
+            "lipoic"
+        ],
+        "generations": [
+            "d",
+            "al",
+            "o",
+            "carbon",
+            "acid",
+            "nitrogen",
+            "bar",
+            "nucle",
+            "oxygen",
+            "chlor"
+        ]
+    },
+    {
+        "distractors": [
+            "trichina",
+            "wormidanopis",
+            "spirogyra"
+        ],
+        "generations": [
+            "c",
+            "P",
+            "H",
+            "N",
+            "al",
+            "d",
+            "z",
+            "R",
+            "h",
+            "lar"
+        ]
+    },
+    {
+        "distractors": [
+            "barometer",
+            "photometer",
+            "dynamometer"
+        ],
+        "generations": [
+            "b",
+            "r",
+            "g",
+            "pro",
+            "t",
+            "ge",
+            "w",
+            "me",
+            "re",
+            "an"
+        ]
+    },
+    {
+        "distractors": [
+            "Caelum",
+            "Apus",
+            "Andromeda"
+        ],
+        "generations": [
+            "so",
+            "poll",
+            "or",
+            "b",
+            "t",
+            "d",
+            "gr",
+            "ex",
+            "f",
+            "and"
+        ]
+    },
+    {
+        "distractors": [
+            "bacteria",
+            "mucus",
+            "carcinogens"
+        ],
+        "generations": [
+            "b",
+            "t",
+            "g",
+            "r",
+            "ch",
+            "l",
+            "infect",
+            "f",
+            "pro",
+            "n"
+        ]
+    },
+    {
+        "distractors": [
+            "distillate",
+            "glacier",
+            "dew"
+        ],
+        "generations": [
+            "precipitation",
+            "ev",
+            "air",
+            "carbon",
+            "water",
+            "vapor",
+            "cond",
+            "insulation",
+            "freezing",
+            "freeze"
+        ]
+    },
+    {
+        "distractors": [
+            "friction",
+            "elasticity",
+            "salinity"
+        ],
+        "generations": [
+            "insulation",
+            "resistance",
+            "vis",
+            "carbon",
+            "frequency",
+            "friction",
+            "precipitation",
+            "temperature",
+            "compression",
+            "t"
+        ]
+    },
+    {
+        "distractors": [
+            "pollen",
+            "helium",
+            "yeast"
+        ],
+        "generations": [
+            "b",
+            "d",
+            "t",
+            "fl",
+            "g",
+            "f",
+            "m",
+            "r",
+            "l",
+            "pl"
+        ]
+    },
+    {
+        "distractors": [
+            "histones",
+            "anions",
+            "synapses"
+        ],
+        "generations": [
+            "lungs",
+            "neurons",
+            "fingers",
+            "muscles",
+            "receptors",
+            "syn",
+            "spor",
+            "nucle",
+            "nucleus",
+            "mitochond"
+        ]
+    },
+    {
+        "distractors": [
+            "mydriasis",
+            "mitosis",
+            "acrobasis"
+        ],
+        "generations": [
+            "end",
+            "ger",
+            "regeneration",
+            "wound",
+            "mutation",
+            "osis",
+            "infection",
+            "exc",
+            "fil",
+            "mutations"
+        ]
+    },
+    {
+        "distractors": [
+            "water",
+            "oxygen",
+            "air"
+        ],
+        "generations": [
+            "water",
+            "soil",
+            "air",
+            "electricity",
+            "energy",
+            "heat",
+            "wind",
+            "sound",
+            "light",
+            "plants"
+        ]
+    },
+    {
+        "distractors": [
+            "peaks",
+            "troughs",
+            "ridges"
+        ],
+        "generations": [
+            "lungs",
+            "spores",
+            "sp",
+            "stages",
+            "tr",
+            "walls",
+            "fingers",
+            "spor",
+            "o",
+            "nucle"
+        ]
+    },
+    {
+        "distractors": [
+            "radiation",
+            "combustion",
+            "diffusion"
+        ],
+        "generations": [
+            "precipitation",
+            "ev",
+            "cond",
+            "electricity",
+            "insulation",
+            "conve",
+            "radiation",
+            "friction",
+            "diffusion",
+            "absorption"
+        ]
+    },
+    {
+        "distractors": [
+            "layers",
+            "fabric",
+            "Softness"
+        ],
+        "generations": [
+            "a",
+            "al",
+            "I",
+            "L",
+            "he",
+            "the",
+            "an",
+            "it",
+            "my",
+            "and"
+        ]
+    },
+    {
+        "distractors": [
+            "algae",
+            "moss",
+            "bacteria"
+        ],
+        "generations": [
+            "carniv",
+            "amphib",
+            "fungi",
+            "bacteria",
+            "birds",
+            "reptiles",
+            "viruses",
+            "spores",
+            "insects",
+            "plants"
+        ]
+    },
+    {
+        "distractors": [
+            "Proteins",
+            "angiosperms",
+            "lipids"
+        ],
+        "generations": [
+            "g",
+            "b",
+            "pro",
+            "r",
+            "ep",
+            "t",
+            "ch",
+            "n",
+            "l",
+            "pl"
+        ]
+    },
+    {
+        "distractors": [
+            "genome",
+            "enzymes",
+            "site"
+        ],
+        "generations": [
+            "egg",
+            "nucleus",
+            "foot",
+            "arm",
+            "test",
+            "organ",
+            "leg",
+            "nucle",
+            "embryo",
+            "chromosome"
+        ]
+    },
+    {
+        "distractors": [
+            "egyptologists",
+            "musicologists",
+            "oncologists"
+        ],
+        "generations": [
+            "he",
+            "a",
+            "my",
+            "I",
+            "we",
+            "an",
+            "carniv",
+            "the",
+            "in",
+            "they"
+        ]
+    },
+    {
+        "distractors": [
+            "five",
+            "one",
+            "three"
+        ],
+        "generations": [
+            "one",
+            "One",
+            "five",
+            "three",
+            "four",
+            "six",
+            "two",
+            "five",
+            "three",
+            "four"
+        ]
+    },
+    {
+        "distractors": [
+            "glass",
+            "pumice",
+            "cobalt"
+        ],
+        "generations": [
+            "glass",
+            "l",
+            "f",
+            "t",
+            "pl",
+            "pr",
+            "b",
+            "cl",
+            "quartz",
+            "light"
+        ]
+    },
+    {
+        "distractors": [
+            "six",
+            "two",
+            "seven"
+        ],
+        "generations": [
+            "five",
+            "one",
+            "three",
+            "four",
+            "six",
+            "eight",
+            "seven",
+            "nine",
+            "two"
+        ]
+    },
+    {
+        "distractors": [
+            "stratosphere",
+            "air",
+            "troposphere"
+        ],
+        "generations": [
+            "rivers",
+            "clouds",
+            "trees",
+            "walls",
+            "water",
+            "wind",
+            "rain",
+            "snow",
+            "cloud"
+        ]
+    },
+    {
+        "distractors": [
+            "proteins",
+            "vitamins",
+            "fats"
+        ],
+        "generations": [
+            "proteins",
+            "fats",
+            "grains",
+            "vitamins",
+            "milk",
+            "meat",
+            "rice",
+            "acids",
+            "water",
+            "protein"
+        ]
+    },
+    {
+        "distractors": [
+            "Fat",
+            "erythrocytes",
+            "tumors"
+        ],
+        "generations": [
+            "b",
+            "t",
+            "ep",
+            "n",
+            "g",
+            "pro",
+            "ne",
+            "ger",
+            "emb",
+            "l"
+        ]
+    },
+    {
+        "distractors": [
+            "immaterial",
+            "unaffected",
+            "increased"
+        ],
+        "generations": [
+            "increased",
+            "raised",
+            "grown",
+            "decreased",
+            "expanded",
+            "controlled",
+            "dropped",
+            "added",
+            "strengthened",
+            "reduced"
+        ]
+    },
+    {
+        "distractors": [
+            "plasma",
+            "decomposition",
+            "stimulant"
+        ],
+        "generations": [
+            "self",
+            "react",
+            "feedback",
+            "response",
+            "insulation",
+            "resistance",
+            "reaction",
+            "instinct",
+            "reacted",
+            "reactions"
+        ]
+    },
+    {
+        "distractors": [
+            "variably",
+            "exponentially",
+            "erratically"
+        ],
+        "generations": [
+            "perimeter",
+            "-",
+            "line",
+            "radius",
+            ",",
+            "kilometers",
+            "grid",
+            "columns",
+            "lines",
+            "and"
+        ]
+    },
+    {
+        "distractors": [
+            "socket",
+            "tendons",
+            "collagen"
+        ],
+        "generations": [
+            "arm",
+            "skin",
+            "bone",
+            "muscles",
+            "feet",
+            "bones",
+            "legs",
+            "lungs",
+            "fingers",
+            "joints"
+        ]
+    },
+    {
+        "distractors": [
+            "animal",
+            "reproductive",
+            "marine"
+        ],
+        "generations": [
+            "tr",
+            "v",
+            "c",
+            "spor",
+            "t",
+            "d",
+            "bou",
+            "fl",
+            "plastic",
+            "boxes"
+        ]
+    },
+    {
+        "distractors": [
+            "hydrogen",
+            "air",
+            "oxygen"
+        ],
+        "generations": [
+            "air",
+            "carbon",
+            "milk",
+            "wind",
+            "oxygen",
+            "electricity",
+            "soil",
+            "water",
+            "plasma",
+            "plastic"
+        ]
+    },
+    {
+        "distractors": [
+            "sera",
+            "risa",
+            "porta"
+        ],
+        "generations": [
+            "he",
+            "it",
+            "P",
+            "I",
+            "a",
+            "that",
+            "this",
+            "they",
+            "the",
+            "and"
+        ]
+    },
+    {
+        "distractors": [
+            "force",
+            "speed",
+            "acceleration"
+        ],
+        "generations": [
+            "height",
+            "shape",
+            "line",
+            "direction",
+            "width",
+            "size",
+            "depth",
+            "speed",
+            "distance",
+            "velocity"
+        ]
+    },
+    {
+        "distractors": [
+            "glutamate",
+            "insulin",
+            "sucrose"
+        ],
+        "generations": [
+            "milk",
+            "plasma",
+            "glucose",
+            "sugar",
+            "water",
+            "juice",
+            "meat",
+            "insulin",
+            "proteins"
+        ]
+    },
+    {
+        "distractors": [
+            "scales",
+            "plates",
+            "spines"
+        ],
+        "generations": [
+            "hands",
+            "feet",
+            "legs",
+            "mouths",
+            "ears",
+            "fingers",
+            "mouth",
+            "hair",
+            "teeth",
+            "skin"
+        ]
+    },
+    {
+        "distractors": [
+            "spores",
+            "copepods",
+            "bacteriophages"
+        ],
+        "generations": [
+            "spor",
+            "gam",
+            "bacteria",
+            "plants",
+            "spores",
+            "d",
+            "p",
+            "carniv",
+            "nucle",
+            "prot"
+        ]
+    },
+    {
+        "distractors": [
+            "light",
+            "pollution",
+            "sound"
+        ],
+        "generations": [
+            "air",
+            "electricity",
+            "radio",
+            "heat",
+            "wind",
+            "gravity",
+            "light",
+            "carbon",
+            "water",
+            "energy"
+        ]
+    },
+    {
+        "distractors": [
+            "muscle",
+            "bacteria",
+            "water"
+        ],
+        "generations": [
+            "air",
+            "heart",
+            "blood",
+            "hair",
+            "stomach",
+            "brain",
+            "milk",
+            "skin",
+            "sweat",
+            "lungs"
+        ]
+    },
+    {
+        "distractors": [
+            "asexual",
+            "symbiotic",
+            "prokaryotic"
+        ],
+        "generations": [
+            "t",
+            "b",
+            "g",
+            "ep",
+            "d",
+            "r",
+            "pl",
+            "ge",
+            "so",
+            "all"
+        ]
+    },
+    {
+        "distractors": [
+            "absorption",
+            "condensation",
+            "transpiration"
+        ],
+        "generations": [
+            "poll",
+            "f",
+            "b",
+            "s",
+            "ge",
+            "gr",
+            "r",
+            "ver",
+            "cond",
+            "me"
+        ]
+    },
+    {
+        "distractors": [
+            "mutations",
+            "endogenous",
+            "dioxins"
+        ],
+        "generations": [
+            "spor",
+            "bacteria",
+            "proteins",
+            "spores",
+            "enzymes",
+            "organ",
+            "mutations",
+            "carniv",
+            "nucle",
+            "fungi"
+        ]
+    },
+    {
+        "distractors": [
+            "translucent",
+            "clean",
+            "bioluminescent"
+        ],
+        "generations": [
+            "w",
+            "cl",
+            "ex",
+            "r",
+            "f",
+            "con",
+            "color",
+            "ful",
+            "solid",
+            "trans"
+        ]
+    },
+    {
+        "distractors": [
+            "lead",
+            "methane",
+            "mercury"
+        ],
+        "generations": [
+            "air",
+            "milk",
+            "stone",
+            "ice",
+            "glass",
+            "plastic",
+            "soil",
+            "electricity",
+            "sand",
+            "water"
+        ]
+    },
+    {
+        "distractors": [
+            "apes",
+            "reptiles",
+            "rats"
+        ],
+        "generations": [
+            "b",
+            "t",
+            "d",
+            "g",
+            "f",
+            "l",
+            "r",
+            "c",
+            "m",
+            "anim"
+        ]
+    },
+    {
+        "distractors": [
+            "protons",
+            "droplets",
+            "plasmids"
+        ],
+        "generations": [
+            "lungs",
+            "veins",
+            "neurons",
+            "kidneys",
+            "cells",
+            "arteries",
+            "stomach",
+            "tissues",
+            "blood",
+            "liver"
+        ]
+    },
+    {
+        "distractors": [
+            "cerebellum",
+            "enamel",
+            "exoskeleton"
+        ],
+        "generations": [
+            "nucleus",
+            "test",
+            "liver",
+            "stomach",
+            "brain",
+            "sperm",
+            "lungs",
+            "nucle",
+            "embryo",
+            "mitochond"
+        ]
+    },
+    {
+        "distractors": [
+            "six",
+            "one",
+            "four"
+        ],
+        "generations": [
+            "one",
+            "five",
+            "two",
+            "six",
+            "three",
+            "four",
+            "six",
+            "four",
+            "seven",
+            "five"
+        ]
+    },
+    {
+        "distractors": [
+            "enthalpy",
+            "ionization",
+            "gravity"
+        ],
+        "generations": [
+            "b",
+            "g",
+            "ge",
+            "t",
+            "f",
+            "ep",
+            "r",
+            "gr",
+            "poll",
+            "ger"
+        ]
+    },
+    {
+        "distractors": [
+            "diffusion",
+            "absorption",
+            "osmosis"
+        ],
+        "generations": [
+            "fil",
+            "precipitation",
+            "ev",
+            "insulation",
+            "carbon",
+            "feedback",
+            "absorption",
+            "temperature",
+            "resp",
+            "o"
+        ]
+    },
+    {
+        "distractors": [
+            "oil",
+            "wine",
+            "blood"
+        ],
+        "generations": [
+            "electricity",
+            "air",
+            "carbon",
+            "heat",
+            "oxygen",
+            "gravity",
+            "water",
+            "plastic",
+            "wind",
+            "liquid"
+        ]
+    },
+    {
+        "distractors": [
+            "rayon",
+            "styrofoam",
+            "silicon"
+        ],
+        "generations": [
+            "plastic",
+            "blue",
+            "milk",
+            "wood",
+            "glass",
+            "rubber",
+            "metal",
+            "sand",
+            "steel",
+            "leather"
+        ]
+    },
+    {
+        "distractors": [
+            "neutrons",
+            "mass",
+            "hydrogen"
+        ],
+        "generations": [
+            "electricity",
+            "air",
+            "chemistry",
+            "temperature",
+            "carbon",
+            "heat",
+            "water",
+            "precipitation",
+            "gravity",
+            "energy"
+        ]
+    },
+    {
+        "distractors": [
+            "tissues",
+            "enzymes",
+            "proteins"
+        ],
+        "generations": [
+            "lip",
+            "lungs",
+            "proteins",
+            "acids",
+            "gases",
+            "vitamins",
+            "hormones",
+            "enzymes",
+            "tissues",
+            "nucle"
+        ]
+    },
+    {
+        "distractors": [
+            "water",
+            "sand",
+            "tree"
+        ],
+        "generations": [
+            "air",
+            "land",
+            "grass",
+            "mountain",
+            "earth",
+            "soil",
+            "river",
+            "mountains",
+            "trees",
+            "rivers"
+        ]
+    },
+    {
+        "distractors": [
+            "trichina",
+            "spirogyra",
+            "organism"
+        ],
+        "generations": [
+            "b",
+            "d",
+            "g",
+            "poll",
+            "pl",
+            "t",
+            "l",
+            "r",
+            "so",
+            "c"
+        ]
+    },
+    {
+        "distractors": [
+            "reproduction",
+            "symbiosis",
+            "collecting"
+        ],
+        "generations": [
+            "recycling",
+            "precipitation",
+            "reproduction",
+            "fertil",
+            "absorption",
+            "storage",
+            "production",
+            "cond",
+            "insulation",
+            "communication"
+        ]
+    },
+    {
+        "distractors": [
+            "starch",
+            "insulin",
+            "nicotine"
+        ],
+        "generations": [
+            "insulin",
+            "glucose",
+            "plate",
+            "carbon",
+            "milk",
+            "lungs",
+            "blood",
+            "chloride",
+            "proteins",
+            "oxygen"
+        ]
+    },
+    {
+        "distractors": [
+            "filaments",
+            "antibodies",
+            "carbon"
+        ],
+        "generations": [
+            "lungs",
+            "spor",
+            "chlor",
+            "proteins",
+            "lip",
+            "c",
+            "nucle",
+            "plasma",
+            "carbon",
+            "mitochond"
+        ]
+    },
+    {
+        "distractors": [
+            "extraterrestrial",
+            "universal",
+            "spacial"
+        ],
+        "generations": [
+            "t",
+            "solid",
+            "o",
+            "al",
+            "liquid",
+            "overhead",
+            "carbon",
+            "d",
+            "nucle",
+            "three"
+        ]
+    },
+    {
+        "distractors": [
+            "radiation",
+            "gravity",
+            "speed"
+        ],
+        "generations": [
+            "electricity",
+            "precipitation",
+            "friction",
+            "energy",
+            "motion",
+            "magnet",
+            "temperature",
+            "wave",
+            "gravity",
+            "sound"
+        ]
+    },
+    {
+        "distractors": [
+            "spiders",
+            "reptiles",
+            "crustaceans"
+        ],
+        "generations": [
+            "dogs",
+            "birds",
+            "monkeys",
+            "frogs",
+            "or",
+            "and",
+            "four",
+            "a",
+            "two",
+            "reptiles"
+        ]
+    },
+    {
+        "distractors": [
+            "uterus",
+            "mitochondria",
+            "notochord"
+        ],
+        "generations": [
+            "b",
+            "g",
+            "t",
+            "pl",
+            "r",
+            "poll",
+            "f",
+            "l",
+            "gr",
+            "pro"
+        ]
+    },
+    {
+        "distractors": [
+            "aquatic",
+            "mutualistic",
+            "herbiverous"
+        ],
+        "generations": [
+            "wild",
+            "carniv",
+            "parasite",
+            "parasitic",
+            "omn",
+            "symb",
+            "amphib",
+            "fertil",
+            "animal",
+            "predators"
+        ]
+    },
+    {
+        "distractors": [
+            "matter",
+            "speed",
+            "color"
+        ],
+        "generations": [
+            "sound",
+            "shape",
+            "temperature",
+            "energy",
+            "electricity",
+            "volume",
+            "heat",
+            "friction",
+            "gravity",
+            "precipitation"
+        ]
+    },
+    {
+        "distractors": [
+            "algorithms",
+            "conservation",
+            "estradiol"
+        ],
+        "generations": [
+            "ge",
+            "d",
+            "met",
+            "o",
+            "al",
+            "cl",
+            "ast",
+            "P",
+            "ret",
+            "c"
+        ]
+    },
+    {
+        "distractors": [
+            "Osteoarthritis",
+            "Gout",
+            "Spondylarthropathies"
+        ],
+        "generations": [
+            "t",
+            "b",
+            "n",
+            "ep",
+            "r",
+            "d",
+            "g",
+            "l",
+            "pl",
+            "ger"
+        ]
+    },
+    {
+        "distractors": [
+            "cancerous",
+            "hypothesis",
+            "consciousness"
+        ],
+        "generations": [
+            "b",
+            "t",
+            "g",
+            "ep",
+            "aut",
+            "f",
+            "gr",
+            "ge",
+            "ret",
+            "me"
+        ]
+    },
+    {
+        "distractors": [
+            "pressure",
+            "fuel",
+            "exercise"
+        ],
+        "generations": [
+            "electricity",
+            "material",
+            "energy",
+            "demand",
+            "heat",
+            "water",
+            "gravity",
+            "carbon",
+            "fuel",
+            "power"
+        ]
+    },
+    {
+        "distractors": [
+            "lungs",
+            "pores",
+            "diaphragm"
+        ],
+        "generations": [
+            "lungs",
+            "feet",
+            "hands",
+            "arteries",
+            "legs",
+            "muscles",
+            "veins",
+            "fingers",
+            "sp",
+            "nose"
+        ]
+    },
+    {
+        "distractors": [
+            "one",
+            "five",
+            "two"
+        ],
+        "generations": [
+            "one",
+            "four",
+            "five",
+            "two",
+            "six",
+            "nine",
+            "three",
+            "seven",
+            "eight"
+        ]
+    },
+    {
+        "distractors": [
+            "food",
+            "precipitation",
+            "makeup"
+        ],
+        "generations": [
+            "soil",
+            "air",
+            "wind",
+            "electricity",
+            "heat",
+            "sunlight",
+            "precipitation",
+            "water",
+            "plants",
+            "energy"
+        ]
+    },
+    {
+        "distractors": [
+            "electric",
+            "explosions",
+            "waves"
+        ],
+        "generations": [
+            "stages",
+            "gases",
+            "ions",
+            "variations",
+            "isot",
+            "frequency",
+            "combustion",
+            "Reaction",
+            "precipitation",
+            "resonance"
+        ]
+    },
+    {
+        "distractors": [
+            "cartilage",
+            "muscles",
+            "nerves"
+        ],
+        "generations": [
+            "muscles",
+            "arms",
+            "lungs",
+            "fingers",
+            "bones",
+            "hands",
+            "knees",
+            "legs",
+            "joints",
+            "arm"
+        ]
+    },
+    {
+        "distractors": [
+            "meiosis",
+            "epistasis",
+            "cytokinesis"
+        ],
+        "generations": [
+            "gam",
+            "regeneration",
+            "o",
+            "ger",
+            "end",
+            "resp",
+            "reproduction",
+            "metabolism",
+            "mutation",
+            "am"
+        ]
+    },
+    {
+        "distractors": [
+            "thorax",
+            "fins",
+            "eyes"
+        ],
+        "generations": [
+            "antenna",
+            "radio",
+            "watt",
+            "nucle",
+            "a",
+            "radios",
+            ",",
+            "meters",
+            "electrons",
+            "centimeters"
+        ]
+    },
+    {
+        "distractors": [
+            "absorption",
+            "degradation",
+            "diffusion"
+        ],
+        "generations": [
+            "cond",
+            "ad",
+            "parking",
+            "erosion",
+            ",",
+            "the",
+            "a",
+            "insulation",
+            "cans",
+            "stamps"
+        ]
+    },
+    {
+        "distractors": [
+            "dessication",
+            "gravity",
+            "implementation"
+        ],
+        "generations": [
+            "ger",
+            "evolution",
+            "agriculture",
+            "reproduction",
+            "decline",
+            "mutation",
+            "migration",
+            "survival",
+            "generation",
+            "experiment"
+        ]
+    },
+    {
+        "distractors": [
+            "fibrosis",
+            "lupus",
+            "arthritis"
+        ],
+        "generations": [
+            "oste",
+            "regeneration",
+            "end",
+            "ger",
+            "o",
+            "metabolism",
+            "ret",
+            "Kap",
+            "gl",
+            "cortisol"
+        ]
+    },
+    {
+        "distractors": [
+            "density",
+            "fluctuations",
+            "polarity"
+        ],
+        "generations": [
+            "sand",
+            "fil",
+            "water",
+            "rivers",
+            "mineral",
+            "minerals",
+            "caps",
+            "lakes",
+            "plants"
+        ]
+    },
+    {
+        "distractors": [
+            "binary",
+            "atomic",
+            "complex"
+        ],
+        "generations": [
+            "f",
+            "n",
+            "d",
+            "b",
+            "g",
+            "ful",
+            "fl",
+            "t",
+            "so",
+            "more"
+        ]
+    },
+    {
+        "distractors": [
+            "positive",
+            "neutral",
+            "certain"
+        ],
+        "generations": [
+            "positive",
+            "negative",
+            "same",
+            "neutral",
+            "proportional",
+            "a",
+            "no",
+            "an",
+            "carbon",
+            "the"
+        ]
+    },
+    {
+        "distractors": [
+            "silicon",
+            "methane",
+            "carbon"
+        ],
+        "generations": [
+            "carbon",
+            "plastic",
+            "plasma",
+            "calcium",
+            "sodium",
+            "helium",
+            "hydrogen",
+            "nitrogen",
+            "oxygen",
+            "solid"
+        ]
+    },
+    {
+        "distractors": [
+            "cations",
+            "bonds",
+            "crystals"
+        ],
+        "generations": [
+            "electrons",
+            "in",
+            "at",
+            "a",
+            "ions",
+            ",",
+            "stages",
+            "to",
+            "the",
+            "and"
+        ]
+    },
+    {
+        "distractors": [
+            "gold",
+            "silver",
+            "aluminum"
+        ],
+        "generations": [
+            "r",
+            "pr",
+            "b",
+            "ex",
+            "w",
+            "color",
+            "d",
+            "mail",
+            "pro",
+            "so"
+        ]
+    },
+    {
+        "distractors": [
+            "cuticle",
+            "scale",
+            "epidermis"
+        ],
+        "generations": [
+            "trunk",
+            "tr",
+            "bark",
+            "bamboo",
+            "pine",
+            "wood",
+            "shr",
+            "sp",
+            "branches",
+            "roots"
+        ]
+    },
+    {
+        "distractors": [
+            "erupting",
+            "permeating",
+            "drilling"
+        ],
+        "generations": [
+            "drilling",
+            "building",
+            "running",
+            "taking",
+            "cutting",
+            "digging",
+            "freezing",
+            "qu",
+            "fracking",
+            "ev"
+        ]
+    },
+    {
+        "distractors": [
+            "polarity",
+            "antagonism",
+            "diffusion"
+        ],
+        "generations": [
+            "f",
+            "t",
+            "v",
+            "b",
+            "poll",
+            "r",
+            "mag",
+            "rad",
+            "gravity",
+            "per"
+        ]
+    },
+    {
+        "distractors": [
+            "steroids",
+            "enzymes",
+            "acids"
+        ],
+        "generations": [
+            "t",
+            "n",
+            "b",
+            "g",
+            "ep",
+            "ch",
+            "ger",
+            "pro",
+            "l",
+            "r"
+        ]
+    },
+    {
+        "distractors": [
+            "power",
+            "structure",
+            "babies"
+        ],
+        "generations": [
+            "eggs",
+            "lungs",
+            "genes",
+            "cells",
+            "chromosomes",
+            "proteins",
+            "mutations",
+            "sperm",
+            "nucle",
+            "nucleus"
+        ]
+    },
+    {
+        "distractors": [
+            "bonds",
+            "cells",
+            "muscles"
+        ],
+        "generations": [
+            "arms",
+            "feet",
+            "hands",
+            "lungs",
+            "bones",
+            "muscles",
+            "knees",
+            "fingers",
+            "legs",
+            "faces"
+        ]
+    },
+    {
+        "distractors": [
+            "forest",
+            "sand",
+            "soil"
+        ],
+        "generations": [
+            "sand",
+            "stone",
+            "soil",
+            "rock",
+            "clay",
+            "wood",
+            "ice",
+            "grass",
+            "lava",
+            "gravel"
+        ]
+    },
+    {
+        "distractors": [
+            "submissive",
+            "internal",
+            "external"
+        ],
+        "generations": [
+            "nucle",
+            "sperm",
+            "nucleus",
+            "mitochond",
+            "sub",
+            "lar",
+            "allele",
+            "dominant",
+            "genes",
+            "mutations"
+        ]
+    },
+    {
+        "distractors": [
+            "microbes",
+            "parasites",
+            "radiation"
+        ],
+        "generations": [
+            "mutations",
+            "eggs",
+            "spores",
+            "bacteria",
+            "genes",
+            "proteins",
+            "spor",
+            "lar",
+            "sperm",
+            "nucle"
+        ]
+    },
+    {
+        "distractors": [
+            "spicule",
+            "spirogyra",
+            "Hybrid"
+        ],
+        "generations": [
+            "d",
+            "t",
+            "l",
+            "b",
+            "g",
+            "w",
+            "r",
+            "cl",
+            "pl",
+            "n"
+        ]
+    },
+    {
+        "distractors": [
+            "magnetic",
+            "mechanical",
+            "kinetic"
+        ],
+        "generations": [
+            "f",
+            "pr",
+            "gr",
+            "b",
+            "gravity",
+            "balance",
+            "color",
+            "per",
+            "so",
+            "me"
+        ]
+    },
+    {
+        "distractors": [
+            "isolates",
+            "prokaryotes",
+            "membranes"
+        ],
+        "generations": [
+            "p",
+            "monkeys",
+            "d",
+            "c",
+            "e",
+            "birds",
+            "chickens",
+            "a",
+            "z",
+            "in"
+        ]
+    },
+    {
+        "distractors": [
+            "shells",
+            "scales",
+            "pores"
+        ],
+        "generations": [
+            "lungs",
+            "hands",
+            "arteries",
+            "kidneys",
+            "legs",
+            "muscles",
+            "tissues",
+            "veins",
+            "pores",
+            "fingers"
+        ]
+    },
+    {
+        "distractors": [
+            "nuclear",
+            "frictional",
+            "tension"
+        ],
+        "generations": [
+            "f",
+            "v",
+            "w",
+            "b",
+            "r",
+            "mag",
+            "ge",
+            "electricity",
+            "gravity",
+            "me"
+        ]
+    },
+    {
+        "distractors": [
+            "epithelial",
+            "amphibious",
+            "aqueous"
+        ],
+        "generations": [
+            "a",
+            "carniv",
+            "eggs",
+            "c",
+            "bacteria",
+            "lar",
+            "amphib",
+            "egg",
+            "an",
+            "spor"
+        ]
+    },
+    {
+        "distractors": [
+            "toxic",
+            "natural",
+            "artificial"
+        ],
+        "generations": [
+            "b",
+            "f",
+            "ge",
+            "met",
+            "poll",
+            "sound",
+            "gas",
+            "me",
+            "so",
+            "chemical"
+        ]
+    },
+    {
+        "distractors": [
+            "condensation",
+            "boiling",
+            "melting"
+        ],
+        "generations": [
+            "freezing",
+            "mixing",
+            "melting",
+            "reducing",
+            "ev",
+            "filling",
+            "boiling",
+            "precipitation",
+            "absorption",
+            "cond"
+        ]
+    },
+    {
+        "distractors": [
+            "migration",
+            "evolution",
+            "immigration"
+        ],
+        "generations": [
+            "ev",
+            "erosion",
+            "cond",
+            "precipitation",
+            "ger",
+            "insulation",
+            "absorption",
+            "friction",
+            "sediment",
+            "protection"
+        ]
+    },
+    {
+        "distractors": [
+            "chloroplasm",
+            "sodium",
+            "melanin"
+        ],
+        "generations": [
+            "d",
+            "chlor",
+            "p",
+            "spor",
+            "c",
+            "tr",
+            "al",
+            "l",
+            "nucle",
+            "lungs"
+        ]
+    },
+    {
+        "distractors": [
+            "polymerisation",
+            "density",
+            "alkalinity"
+        ],
+        "generations": [
+            "b",
+            "rad",
+            "op",
+            "f",
+            "poll",
+            "ep",
+            "im",
+            "gr",
+            "re",
+            "me"
+        ]
+    },
+    {
+        "distractors": [
+            "centricles",
+            "tubercles",
+            "enterocytes"
+        ],
+        "generations": [
+            "chromosomes",
+            "gardens",
+            "lungs",
+            "z",
+            "a",
+            "di",
+            "tr",
+            "spor",
+            "carniv",
+            "nucle"
+        ]
+    },
+    {
+        "distractors": [
+            "three",
+            "two",
+            "one"
+        ],
+        "generations": [
+            "zero",
+            "four",
+            "five",
+            "three",
+            "nine",
+            "eight",
+            "one",
+            ",",
+            "hundred",
+            "ten"
+        ]
+    },
+    {
+        "distractors": [
+            "brain",
+            "intestine",
+            "pancreas"
+        ],
+        "generations": [
+            "lungs",
+            "ov",
+            "kidneys",
+            "tr",
+            "par",
+            "sp",
+            "nucleus",
+            "legs",
+            "liver",
+            "stomach"
+        ]
+    },
+    {
+        "distractors": [
+            "slimy",
+            "moisture",
+            "magnetic"
+        ],
+        "generations": [
+            "temperature",
+            "height",
+            "energy",
+            "speed",
+            "electricity",
+            "frequency",
+            "friction",
+            "gravity",
+            "velocity",
+            "voltage"
+        ]
+    },
+    {
+        "distractors": [
+            "chemical",
+            "temperature",
+            "motion"
+        ],
+        "generations": [
+            "electricity",
+            "air",
+            "carbon",
+            "energy",
+            "gravity",
+            "wind",
+            "water",
+            "heat",
+            "sound",
+            "light"
+        ]
+    },
+    {
+        "distractors": [
+            "lungs",
+            "pancreas",
+            "liver"
+        ],
+        "generations": [
+            "l",
+            "lungs",
+            "b",
+            "n",
+            "g",
+            "t",
+            "d",
+            "dig",
+            "f",
+            "r"
+        ]
+    },
+    {
+        "distractors": [
+            "testes",
+            "tubules",
+            "glands"
+        ],
+        "generations": [
+            "lungs",
+            "ov",
+            "kidneys",
+            "tr",
+            "ob",
+            "sp",
+            "spor",
+            "z",
+            "c",
+            "sperm"
+        ]
+    },
+    {
+        "distractors": [
+            "vegetables",
+            "salts",
+            "minerals"
+        ],
+        "generations": [
+            "proteins",
+            "acids",
+            "hormones",
+            "vitamins",
+            "tissues",
+            "fats",
+            "gases",
+            "grains",
+            "chemicals",
+            "milk"
+        ]
+    },
+    {
+        "distractors": [
+            "permeation",
+            "absorption",
+            "convection"
+        ],
+        "generations": [
+            "insulation",
+            "ev",
+            "diffusion",
+            "precipitation",
+            "response",
+            "communication",
+            "absorption",
+            "combustion",
+            "fil",
+            "feedback"
+        ]
+    },
+    {
+        "distractors": [
+            "cartilage",
+            "thorax",
+            "diagram"
+        ],
+        "generations": [
+            "d",
+            "c",
+            "rib",
+            "g",
+            "bamboo",
+            "sp",
+            "nucleus",
+            "arm",
+            "cage",
+            "bar"
+        ]
+    },
+    {
+        "distractors": [
+            "pollutants",
+            "catalysts",
+            "carcinogens"
+        ],
+        "generations": [
+            "spor",
+            "mutations",
+            "genes",
+            "lar",
+            "p",
+            "c",
+            "chlor",
+            "nucle",
+            "sperm",
+            "pollen"
+        ]
+    },
+    {
+        "distractors": [
+            "two",
+            "four",
+            "one"
+        ],
+        "generations": [
+            "one",
+            "four",
+            "five",
+            "two",
+            "nine",
+            "six",
+            "three",
+            "seven",
+            "eight"
+        ]
+    },
+    {
+        "distractors": [
+            "catalysts",
+            "enzymes",
+            "aldehydes"
+        ],
+        "generations": [
+            "P",
+            "H",
+            "L",
+            "Al",
+            "al",
+            "K",
+            "Sto",
+            "R",
+            "Dan",
+            "B"
+        ]
+    },
+    {
+        "distractors": [
+            "styrofoam",
+            "cellophane",
+            "aluminum"
+        ],
+        "generations": [
+            "cl",
+            "w",
+            "l",
+            "t",
+            "r",
+            "pl",
+            "b",
+            "f",
+            "mail",
+            "glass"
+        ]
+    },
+    {
+        "distractors": [
+            "acids",
+            "sugars",
+            "proteins"
+        ],
+        "generations": [
+            "f",
+            "pro",
+            "b",
+            "pr",
+            "l",
+            "t",
+            "fl",
+            "r",
+            "ch",
+            "meat"
+        ]
+    },
+    {
+        "distractors": [
+            "lungs",
+            "glands",
+            "kidneys"
+        ],
+        "generations": [
+            "lungs",
+            "ov",
+            "bones",
+            "legs",
+            "fingers",
+            "eggs",
+            "kidneys",
+            "sp",
+            "liver",
+            "sperm"
+        ]
+    },
+    {
+        "distractors": [
+            "intraspecific",
+            "beneficial",
+            "mimicry"
+        ],
+        "generations": [
+            "b",
+            "r",
+            "ep",
+            "d",
+            "poll",
+            "pl",
+            "ge",
+            "re",
+            "ver",
+            "dep"
+        ]
+    },
+    {
+        "distractors": [
+            "sound",
+            "light",
+            "dust"
+        ],
+        "generations": [
+            "electricity",
+            "radio",
+            "air",
+            "sound",
+            "water",
+            "heat",
+            "energy",
+            "radiation",
+            "wind",
+            "light"
+        ]
+    },
+    {
+        "distractors": [
+            "absorption",
+            "regression",
+            "filtration"
+        ],
+        "generations": [
+            "dig",
+            "se",
+            "f",
+            "dec",
+            "b",
+            "me",
+            "gr",
+            "per",
+            "re",
+            "cond"
+        ]
+    },
+    {
+        "distractors": [
+            "deformities",
+            "problems",
+            "diseases"
+        ],
+        "generations": [
+            "mutations",
+            "lungs",
+            "cancers",
+            "diseases",
+            "end",
+            "disorders",
+            "exc",
+            "stomach",
+            "liver",
+            "psychotic"
+        ]
+    },
+    {
+        "distractors": [
+            "accumulation",
+            "frequency",
+            "synchrony"
+        ],
+        "generations": [
+            "precipitation",
+            "communication",
+            "wave",
+            "alarm",
+            "insulation",
+            "response",
+            "interference",
+            "interruption",
+            "ev",
+            "feedback"
+        ]
+    },
+    {
+        "distractors": [
+            "virus",
+            "pests",
+            "algae"
+        ],
+        "generations": [
+            "bacteria",
+            "birds",
+            "plants",
+            "spores",
+            "fungi",
+            "meat",
+            "amphib",
+            "carniv",
+            "animal",
+            "acteria"
+        ]
+    },
+    {
+        "distractors": [
+            "pigments",
+            "seeds",
+            "lipids"
+        ],
+        "generations": [
+            "pro",
+            "b",
+            "cells",
+            "t",
+            "g",
+            "l",
+            "r",
+            "dig",
+            "ch",
+            "prot"
+        ]
+    },
+    {
+        "distractors": [
+            "astronomy",
+            "climatology",
+            "geology"
+        ],
+        "generations": [
+            "ge",
+            "chemistry",
+            "electricity",
+            "energy",
+            "plasma",
+            "carbon",
+            "history",
+            "math",
+            "biology",
+            "physics"
+        ]
+    },
+    {
+        "distractors": [
+            "butterflies",
+            "larvae",
+            "bees"
+        ],
+        "generations": [
+            "water",
+            "air",
+            "rain",
+            "electricity",
+            "snow",
+            "cloud",
+            "sun",
+            "precipitation",
+            "wind",
+            "clouds"
+        ]
+    },
+    {
+        "distractors": [
+            "mass",
+            "energy",
+            "leverage"
+        ],
+        "generations": [
+            "electricity",
+            "energy",
+            "gravity",
+            "magnet",
+            "light",
+            "friction",
+            "motion",
+            "power",
+            "pressure",
+            "force"
+        ]
+    },
+    {
+        "distractors": [
+            "estimation",
+            "frequency",
+            "prediction"
+        ],
+        "generations": [
+            "width",
+            "accuracy",
+            "frequency",
+            "resistance",
+            "recall",
+            "temperature",
+            "friction",
+            "velocity",
+            "strength",
+            "measurement"
+        ]
+    },
+    {
+        "distractors": [
+            "crystals",
+            "atoms",
+            "hydrogens"
+        ],
+        "generations": [
+            "f",
+            "pro",
+            "b",
+            "t",
+            "g",
+            "r",
+            "k",
+            "l",
+            "pr",
+            "prot"
+        ]
+    },
+    {
+        "distractors": [
+            "prosauropod",
+            "Eutheria",
+            "Metatheria"
+        ],
+        "generations": [
+            "mamm",
+            "d",
+            "a",
+            "al",
+            "c",
+            "carniv",
+            "o",
+            "ov",
+            "g",
+            "tr"
+        ]
+    },
+    {
+        "distractors": [
+            "carbohydrates",
+            "hormones",
+            "soil"
+        ],
+        "generations": [
+            "b",
+            "g",
+            "t",
+            "fl",
+            "dig",
+            "pro",
+            "l",
+            "f",
+            "r",
+            "meat"
+        ]
+    },
+    {
+        "distractors": [
+            "meat",
+            "nuts",
+            "treasure"
+        ],
+        "generations": [
+            "solid",
+            "liquid",
+            "plasma",
+            "stem",
+            "nucle",
+            "lip",
+            "skin",
+            "fat",
+            "carbon",
+            "lungs"
+        ]
+    },
+    {
+        "distractors": [
+            "hydrogen",
+            "glucose",
+            "helium"
+        ],
+        "generations": [
+            "b",
+            "d",
+            "r",
+            "l",
+            "ex",
+            "so",
+            "two",
+            "pro",
+            "one",
+            "all"
+        ]
+    },
+    {
+        "distractors": [
+            "energy",
+            "ice",
+            "power"
+        ],
+        "generations": [
+            "gas",
+            "t",
+            "f",
+            "l",
+            "b",
+            "glass",
+            "light",
+            "liquid",
+            "plasma",
+            "solid"
+        ]
+    },
+    {
+        "distractors": [
+            "digestive",
+            "pulminary",
+            "respiratory"
+        ],
+        "generations": [
+            "immune",
+            "lungs",
+            "digestive",
+            "circ",
+            "stomach",
+            "chest",
+            "lung",
+            "liver",
+            "brain",
+            "respiratory"
+        ]
+    },
+    {
+        "distractors": [
+            "gallons",
+            "feet",
+            "pounds"
+        ],
+        "generations": [
+            "t",
+            "lit",
+            "heights",
+            "r",
+            "l",
+            "kil",
+            "imeters",
+            "k",
+            "mill",
+            "size"
+        ]
+    },
+    {
+        "distractors": [
+            "expansion",
+            "replication",
+            "reproduction"
+        ],
+        "generations": [
+            "growth",
+            "ger",
+            "age",
+            "death",
+            "energy",
+            "movement",
+            "maturity",
+            "regeneration",
+            "development",
+            "decline"
+        ]
+    },
+    {
+        "distractors": [
+            "breathe",
+            "look",
+            "eat"
+        ],
+        "generations": [
+            "move",
+            "jump",
+            "run",
+            "rise",
+            "wake",
+            "feel",
+            "touch",
+            "fall",
+            "push"
+        ]
+    },
+    {
+        "distractors": [
+            "respiration",
+            "growth",
+            "immunity"
+        ],
+        "generations": [
+            "metabolism",
+            "energy",
+            "response",
+            "temperature",
+            "regeneration",
+            "digestion",
+            "circ",
+            "resp",
+            "lungs",
+            "consciousness"
+        ]
+    },
+    {
+        "distractors": [
+            "visible",
+            "thermal",
+            "invisible"
+        ],
+        "generations": [
+            "physical",
+            "thermal",
+            "biological",
+            "mental",
+            "environmental",
+            "nucle",
+            "carbon",
+            "chemical",
+            "psych",
+            "mentally"
+        ]
+    },
+    {
+        "distractors": [
+            "light",
+            "pull",
+            "weight"
+        ],
+        "generations": [
+            "energy",
+            "temperature",
+            "electricity",
+            "gravity",
+            "friction",
+            "motion",
+            "pressure",
+            "sound",
+            "magnet",
+            "shape"
+        ]
+    },
+    {
+        "distractors": [
+            "force",
+            "hydrogen",
+            "pressure"
+        ],
+        "generations": [
+            "electricity",
+            "air",
+            "heat",
+            "water",
+            "friction",
+            "energy",
+            "carbon",
+            "gravity",
+            "sound",
+            "light"
+        ]
+    },
+    {
+        "distractors": [
+            "allergies",
+            "obesity",
+            "parasites"
+        ],
+        "generations": [
+            "bacteria",
+            "predators",
+            "viruses",
+            "spores",
+            "insects",
+            "pathogens",
+            "parasites",
+            "carniv",
+            "prey",
+            "fungi"
+        ]
+    },
+    {
+        "distractors": [
+            "density",
+            "volume",
+            "velocity"
+        ],
+        "generations": [
+            "gravity",
+            "f",
+            "color",
+            "mass",
+            "shape",
+            "size",
+            "speed",
+            "height",
+            "w",
+            "me"
+        ]
+    },
+    {
+        "distractors": [
+            "cool",
+            "cold",
+            "both"
+        ],
+        "generations": [
+            "cold",
+            "new",
+            "hot",
+            "empty",
+            "small",
+            "cool",
+            "warm",
+            "dry",
+            "water"
+        ]
+    },
+    {
+        "distractors": [
+            "random",
+            "complex",
+            "high"
+        ],
+        "generations": [
+            "expensive",
+            "large",
+            "big",
+            "much",
+            "cheap",
+            "different",
+            "important",
+            "simple",
+            "small"
+        ]
+    },
+    {
+        "distractors": [
+            "hypothalamus",
+            "pristil",
+            "ovules"
+        ],
+        "generations": [
+            "c",
+            "tr",
+            "al",
+            "shr",
+            "st",
+            "spor",
+            "lar",
+            "sp",
+            "nucleus",
+            "wings"
+        ]
+    },
+    {
+        "distractors": [
+            "osmosis",
+            "evaporation",
+            "divergence"
+        ],
+        "generations": [
+            "ger",
+            "reproduction",
+            "regeneration",
+            "gam",
+            "mutation",
+            "metabolism",
+            "sperm",
+            "spores",
+            "lungs",
+            "mutations"
+        ]
+    },
+    {
+        "distractors": [
+            "glucose",
+            "lipids",
+            "nucleus"
+        ],
+        "generations": [
+            "mitochond",
+            "ob",
+            "al",
+            "c",
+            "chlor",
+            "nucle",
+            "nucleus",
+            "a",
+            "the",
+            "lungs"
+        ]
+    },
+    {
+        "distractors": [
+            "cilia",
+            "cytoplasm",
+            "flagella"
+        ],
+        "generations": [
+            "p",
+            "d",
+            "chlor",
+            "t",
+            "c",
+            "spor",
+            "carbon",
+            "nucle",
+            "plastic",
+            "lungs"
+        ]
+    },
+    {
+        "distractors": [
+            "soild",
+            "plasma",
+            "liquid"
+        ],
+        "generations": [
+            "carbon",
+            "liquid",
+            "solid",
+            "air",
+            "fluid",
+            "oxygen",
+            "vapor",
+            "gas",
+            "liquids",
+            "gases"
+        ]
+    },
+    {
+        "distractors": [
+            "weight",
+            "resistance",
+            "energy"
+        ],
+        "generations": [
+            "f",
+            "t",
+            "v",
+            "gravity",
+            "mag",
+            "color",
+            "sound",
+            "heat",
+            "me",
+            "cond"
+        ]
+    },
+    {
+        "distractors": [
+            "protists",
+            "spirogyra",
+            "trichina"
+        ],
+        "generations": [
+            "cl",
+            "d",
+            "ge",
+            "c",
+            "a",
+            "P",
+            "j",
+            "an",
+            "the",
+            "z"
+        ]
+    },
+    {
+        "distractors": [
+            "erosion",
+            "bracing",
+            "bleaching"
+        ],
+        "generations": [
+            "melting",
+            "precipitation",
+            "drilling",
+            "freezing",
+            "ev",
+            "ge",
+            "snow",
+            "cond",
+            "erosion",
+            "insulation"
+        ]
+    },
+    {
+        "distractors": [
+            "haze",
+            "ambient",
+            "saturation"
+        ],
+        "generations": [
+            "electricity",
+            "precipitation",
+            "air",
+            "carbon",
+            "friction",
+            "gravity",
+            "heat",
+            "temperature",
+            "humidity",
+            "sound"
+        ]
+    },
+    {
+        "distractors": [
+            "filtration",
+            "excretion",
+            "circulation"
+        ],
+        "generations": [
+            "absorption",
+            "digestion",
+            "ger",
+            "communication",
+            "precipitation",
+            "migration",
+            "oxidation",
+            "preparation",
+            "ev",
+            "freezing"
+        ]
+    },
+    {
+        "distractors": [
+            "oxygen",
+            "carbonate",
+            "energy"
+        ],
+        "generations": [
+            "chlor",
+            "milk",
+            "nucle",
+            "carbon",
+            "fertilizer",
+            "plasma",
+            "oxygen",
+            "spor",
+            "proteins",
+            "enzymes"
+        ]
+    },
+    {
+        "distractors": [
+            "viviparous",
+            "herbivores",
+            "marsupial"
+        ],
+        "generations": [
+            "eggs",
+            "c",
+            "spor",
+            "d",
+            "di",
+            "p",
+            "tr",
+            "o",
+            "egg",
+            "sperm"
+        ]
+    },
+    {
+        "distractors": [
+            "experimental",
+            "fundamental",
+            "theoretical"
+        ],
+        "generations": [
+            "Math",
+            "mathematical",
+            "TV",
+            "radio",
+            "math",
+            "English",
+            "the",
+            "maths",
+            "physics",
+            "mathematics"
+        ]
+    },
+    {
+        "distractors": [
+            "producers",
+            "consumers",
+            "probiotics"
+        ],
+        "generations": [
+            "b",
+            "poll",
+            "d",
+            "pro",
+            "c",
+            "m",
+            "re",
+            "r",
+            "pre",
+            "prot"
+        ]
+    },
+    {
+        "distractors": [
+            "treatment",
+            "toxin",
+            "gift"
+        ],
+        "generations": [
+            "b",
+            "t",
+            "d",
+            "g",
+            "cl",
+            "l",
+            "gas",
+            "dep",
+            "f",
+            "pro"
+        ]
+    },
+    {
+        "distractors": [
+            "progesterone",
+            "gastrin",
+            "oxygen"
+        ],
+        "generations": [
+            "carbon",
+            "air",
+            "oxygen",
+            "milk",
+            "plasma",
+            "chlor",
+            "gases",
+            "bacteria",
+            "enzymes",
+            "proteins"
+        ]
+    },
+    {
+        "distractors": [
+            "filament",
+            "shift",
+            "wire"
+        ],
+        "generations": [
+            "flood",
+            "storm",
+            "cloud",
+            "rain",
+            "wind",
+            "snow",
+            "thunder",
+            "light",
+            "wave"
+        ]
+    },
+    {
+        "distractors": [
+            "gases",
+            "solids",
+            "loads"
+        ],
+        "generations": [
+            "f",
+            "t",
+            "b",
+            "w",
+            "pr",
+            "r",
+            "fl",
+            "l",
+            "ch",
+            "cl"
+        ]
+    },
+    {
+        "distractors": [
+            "ionic",
+            "uneven",
+            "crooked"
+        ],
+        "generations": [
+            "carbon",
+            "mixed",
+            "dual",
+            "liquid",
+            "solid",
+            "molecule",
+            "isot",
+            "vapor",
+            "met",
+            "surface"
+        ]
+    },
+    {
+        "distractors": [
+            "gold",
+            "helium",
+            "silver"
+        ],
+        "generations": [
+            "carbon",
+            "oxygen",
+            "plasma",
+            "helium",
+            "calcium",
+            "nitrogen",
+            "steel",
+            "iron",
+            "plastic",
+            "solid"
+        ]
+    },
+    {
+        "distractors": [
+            "base",
+            "carbon",
+            "oxygen"
+        ],
+        "generations": [
+            "b",
+            "t",
+            "g",
+            "l",
+            "pro",
+            "gas",
+            "ch",
+            "solid",
+            "carbon",
+            "so"
+        ]
+    },
+    {
+        "distractors": [
+            "sheath",
+            "annulata",
+            "soleus"
+        ],
+        "generations": [
+            "al",
+            "spor",
+            "d",
+            "c",
+            "gl",
+            "o",
+            "nucleus",
+            "N",
+            "P",
+            "L"
+        ]
+    },
+    {
+        "distractors": [
+            "momentum",
+            "density",
+            "magnetism"
+        ],
+        "generations": [
+            "height",
+            "shape",
+            "energy",
+            "force",
+            "gravity",
+            "velocity",
+            "pressure",
+            "size",
+            "strength",
+            "weight"
+        ]
+    },
+    {
+        "distractors": [
+            "ankles",
+            "knees",
+            "necks"
+        ],
+        "generations": [
+            "n",
+            "pro",
+            "t",
+            "l",
+            "b",
+            "d",
+            "ne",
+            "g",
+            "r",
+            "f"
+        ]
+    },
+    {
+        "distractors": [
+            "state",
+            "property",
+            "material"
+        ],
+        "generations": [
+            "element",
+            "mark",
+            "line",
+            "letter",
+            "item",
+            "part",
+            "person",
+            "piece",
+            "form",
+            "aspect"
+        ]
+    },
+    {
+        "distractors": [
+            "growth",
+            "respiration",
+            "reproduction"
+        ],
+        "generations": [
+            "physical",
+            "respiratory",
+            "biological",
+            "social",
+            "biochemical",
+            "metabolic",
+            "skeletal",
+            "mental",
+            "digestive",
+            "circ"
+        ]
+    },
+    {
+        "distractors": [
+            "phalanges",
+            "renal",
+            "glandular"
+        ],
+        "generations": [
+            "ger",
+            "b",
+            "g",
+            "poll",
+            "t",
+            "ep",
+            "l",
+            "dig",
+            "pl",
+            "r"
+        ]
+    },
+    {
+        "distractors": [
+            "cube",
+            "conical",
+            "cylindrical"
+        ],
+        "generations": [
+            "al",
+            "nucleus",
+            "radius",
+            "grid",
+            "streak",
+            "molecule",
+            ",",
+            "nucle",
+            "and",
+            "ring"
+        ]
+    },
+    {
+        "distractors": [
+            "asexually",
+            "flowering",
+            "grafting"
+        ],
+        "generations": [
+            "sexually",
+            "physically",
+            "biologically",
+            "socially",
+            "mentally",
+            "spor",
+            "menstru",
+            "sperm",
+            "sex",
+            "sexual"
+        ]
+    },
+    {
+        "distractors": [
+            "resonances",
+            "generators",
+            "fans"
+        ],
+        "generations": [
+            "radios",
+            "lights",
+            "engines",
+            "electricity",
+            "batteries",
+            "machines",
+            "ions",
+            "electrons",
+            "radio",
+            "electrom"
+        ]
+    },
+    {
+        "distractors": [
+            "rna",
+            "chlorophyll",
+            "protein"
+        ],
+        "generations": [
+            "spor",
+            "chlor",
+            "lungs",
+            "nucleus",
+            "sperm",
+            "nucle",
+            "mitochond",
+            "cell",
+            "bacteria",
+            "cells"
+        ]
+    },
+    {
+        "distractors": [
+            "sponge",
+            "arthropod",
+            "bacteria"
+        ],
+        "generations": [
+            "c",
+            "amphib",
+            "algae",
+            "p",
+            "bamboo",
+            "fish",
+            "banana",
+            "worm",
+            "egg",
+            "bacteria"
+        ]
+    },
+    {
+        "distractors": [
+            "sweat",
+            "pus",
+            "saliva"
+        ],
+        "generations": [
+            "muc",
+            "o",
+            "end",
+            "fil",
+            "sweat",
+            "liver",
+            "stomach",
+            "sperm",
+            "secretion",
+            "lungs"
+        ]
+    },
+    {
+        "distractors": [
+            "homeostasis",
+            "nervous",
+            "digestive"
+        ],
+        "generations": [
+            "d",
+            "ep",
+            "ex",
+            "dig",
+            "b",
+            "f",
+            "re",
+            "poll",
+            "aut",
+            "r"
+        ]
+    },
+    {
+        "distractors": [
+            "carnivorous",
+            "vertebrates",
+            "lineages"
+        ],
+        "generations": [
+            "c",
+            "spor",
+            "tr",
+            "reptiles",
+            "p",
+            "wings",
+            "lungs",
+            "nucle",
+            "amphib",
+            "nucleus"
+        ]
+    },
+    {
+        "distractors": [
+            "round",
+            "difficult",
+            "similar"
+        ],
+        "generations": [
+            "same",
+            "expensive",
+            "ordinary",
+            "common",
+            "normal",
+            "familiar",
+            "similar",
+            "usual",
+            "different"
+        ]
+    },
+    {
+        "distractors": [
+            "trophic",
+            "graphic",
+            "monophyletic"
+        ],
+        "generations": [
+            "b",
+            "ger",
+            "ep",
+            "g",
+            "pro",
+            "t",
+            "n",
+            "emb",
+            "pl",
+            "prot"
+        ]
+    },
+    {
+        "distractors": [
+            "xylem",
+            "enzymes",
+            "parenchyma"
+        ],
+        "generations": [
+            "spor",
+            "c",
+            "al",
+            "carniv",
+            "sperm",
+            "chlor",
+            "p",
+            "nucle",
+            "lungs",
+            "bacteria"
+        ]
+    },
+    {
+        "distractors": [
+            "stomach",
+            "tongue",
+            "esophagus"
+        ],
+        "generations": [
+            "arm",
+            "liver",
+            "nose",
+            "mouth",
+            "ear",
+            "foot",
+            "stomach",
+            "heart",
+            "brain",
+            "lungs"
+        ]
+    },
+    {
+        "distractors": [
+            "three",
+            "four",
+            "twelve"
+        ],
+        "generations": [
+            "one",
+            "four",
+            "three",
+            "five",
+            "nine",
+            "seven",
+            "eight",
+            "six",
+            "two"
+        ]
+    },
+    {
+        "distractors": [
+            "kidney",
+            "pancreas",
+            "heart"
+        ],
+        "generations": [
+            "l",
+            "t",
+            "d",
+            "kid",
+            "g",
+            "b",
+            "n",
+            "heart",
+            "liver",
+            "lungs"
+        ]
+    },
+    {
+        "distractors": [
+            "element",
+            "synthesis",
+            "nucleus"
+        ],
+        "generations": [
+            "b",
+            "g",
+            "f",
+            "pr",
+            "l",
+            "glass",
+            "ch",
+            "atom",
+            "pro",
+            "solid"
+        ]
+    },
+    {
+        "distractors": [
+            "urethra",
+            "ovary",
+            "vulva"
+        ],
+        "generations": [
+            "al",
+            "R",
+            "c",
+            "vaginal",
+            "H",
+            "L",
+            "C",
+            "a",
+            "P",
+            "the"
+        ]
+    },
+    {
+        "distractors": [
+            "magma",
+            "gases",
+            "air"
+        ],
+        "generations": [
+            "air",
+            "electricity",
+            "wind",
+            "ice",
+            "carbon",
+            "rain",
+            "heat",
+            "soil",
+            "sand",
+            "water"
+        ]
+    },
+    {
+        "distractors": [
+            "factor",
+            "mass",
+            "volume"
+        ],
+        "generations": [
+            "gravity",
+            "energy",
+            "electricity",
+            "motion",
+            "shape",
+            "momentum",
+            "friction",
+            "velocity",
+            "height",
+            "weight"
+        ]
+    },
+    {
+        "distractors": [
+            "uterus",
+            "glucose",
+            "Stomach"
+        ],
+        "generations": [
+            "tr",
+            "solid",
+            "lar",
+            "c",
+            "d",
+            "egg",
+            "sp",
+            "t",
+            "nucle",
+            "sperm"
+        ]
+    },
+    {
+        "distractors": [
+            "Sperm",
+            "embryo",
+            "stimulation"
+        ],
+        "generations": [
+            "ger",
+            "reproduction",
+            "gam",
+            "fertil",
+            "egg",
+            "sperm",
+            "seed",
+            "generation",
+            "migration",
+            "lar"
+        ]
+    },
+    {
+        "distractors": [
+            "extension",
+            "flexion",
+            "supination"
+        ],
+        "generations": [
+            "pronunciation",
+            "communication",
+            "response",
+            "movement",
+            "pron",
+            "ev",
+            "acceleration",
+            "sound",
+            "recall",
+            "speech"
+        ]
+    },
+    {
+        "distractors": [
+            "fruits",
+            "spiders",
+            "mice"
+        ],
+        "generations": [
+            "g",
+            "t",
+            "f",
+            "fl",
+            "m",
+            "b",
+            "poll",
+            "pre",
+            "pl",
+            "r"
+        ]
+    },
+    {
+        "distractors": [
+            "compounds",
+            "protons",
+            "matter"
+        ],
+        "generations": [
+            "stages",
+            "links",
+            "orbits",
+            "lines",
+            "solutions",
+            "parts",
+            "connections",
+            "principles",
+            "fragments",
+            "elements"
+        ]
+    },
+    {
+        "distractors": [
+            "convection",
+            "electric",
+            "thermal"
+        ],
+        "generations": [
+            "sound",
+            "f",
+            "b",
+            "v",
+            "w",
+            "elect",
+            "color",
+            "heat",
+            "me",
+            "light"
+        ]
+    },
+    {
+        "distractors": [
+            "stomach",
+            "lungs",
+            "pancreas"
+        ],
+        "generations": [
+            "l",
+            "t",
+            "b",
+            "w",
+            "r",
+            "d",
+            "body",
+            "heart",
+            "n",
+            "f"
+        ]
+    },
+    {
+        "distractors": [
+            "glucose",
+            "insulin",
+            "testosterone"
+        ],
+        "generations": [
+            "t",
+            "yg",
+            "b",
+            "n",
+            "r",
+            "ver",
+            "sex",
+            "est",
+            "rogens",
+            "sexually"
+        ]
+    },
+    {
+        "distractors": [
+            "collagen",
+            "ectoderm",
+            "phloem"
+        ],
+        "generations": [
+            "b",
+            "g",
+            "d",
+            "pro",
+            "k",
+            "t",
+            "l",
+            "r",
+            "ep",
+            "pl"
+        ]
+    },
+    {
+        "distractors": [
+            "mixture",
+            "water",
+            "Base"
+        ],
+        "generations": [
+            "air",
+            "liquid",
+            "carbon",
+            "sediment",
+            "gas",
+            "water",
+            "fluid",
+            "vapor",
+            "solid",
+            "liquids"
+        ]
+    },
+    {
+        "distractors": [
+            "carotid",
+            "subclavian",
+            "femoral"
+        ],
+        "generations": [
+            "al",
+            "st",
+            "a",
+            "tr",
+            "an",
+            "artery",
+            "c",
+            "the",
+            "lungs",
+            "arteries"
+        ]
+    },
+    {
+        "distractors": [
+            "pressure",
+            "resistance",
+            "density"
+        ],
+        "generations": [
+            "light",
+            "electricity",
+            "current",
+            "sound",
+            "gases",
+            "ions",
+            "energy",
+            "gravity",
+            "carbon",
+            "insulation"
+        ]
+    },
+    {
+        "distractors": [
+            "propagation",
+            "disposal",
+            "predation"
+        ],
+        "generations": [
+            "ger",
+            "carniv",
+            "spor",
+            "chlor",
+            "lar",
+            "seed",
+            "nucle",
+            "fertil",
+            "pollen",
+            "reproduction"
+        ]
+    },
+    {
+        "distractors": [
+            "multicellular",
+            "photosynthetic",
+            "immature"
+        ],
+        "generations": [
+            "un",
+            "a",
+            "at",
+            "carniv",
+            "in",
+            "tr",
+            "omn",
+            "of",
+            "two",
+            "all"
+        ]
+    },
+    {
+        "distractors": [
+            "strong",
+            "complex",
+            "weak"
+        ],
+        "generations": [
+            "expensive",
+            "light",
+            "new",
+            "special",
+            "small",
+            "hard",
+            "cheap",
+            "normal",
+            "simple",
+            "boring"
+        ]
+    },
+    {
+        "distractors": [
+            "radius",
+            "leaves",
+            "pistol"
+        ],
+        "generations": [
+            "t",
+            "l",
+            "r",
+            "le",
+            "k",
+            "str",
+            "f",
+            "w",
+            "line",
+            "circle"
+        ]
+    },
+    {
+        "distractors": [
+            "chemical",
+            "visible",
+            "thermal"
+        ],
+        "generations": [
+            "chemical",
+            "thermal",
+            "physical",
+            "mental",
+            "environmental",
+            "biological",
+            "social",
+            "experimental",
+            "mechanical",
+            "psych"
+        ]
+    },
+    {
+        "distractors": [
+            "acids",
+            "bases",
+            "enzymes"
+        ],
+        "generations": [
+            "hormones",
+            "veins",
+            "lungs",
+            "proteins",
+            "genes",
+            "tissues",
+            "receptors",
+            "pit",
+            "sperm",
+            "cortisol"
+        ]
+    },
+    {
+        "distractors": [
+            "philosophical",
+            "reactive",
+            "symbolic"
+        ],
+        "generations": [
+            "isot",
+            "chemistry",
+            "experimental",
+            "a",
+            "carbon",
+            "ge",
+            "molecule",
+            "nucle",
+            "the",
+            "physics"
+        ]
+    },
+    {
+        "distractors": [
+            "stomach",
+            "brain",
+            "skin"
+        ],
+        "generations": [
+            "heart",
+            "air",
+            "head",
+            "blood",
+            "brain",
+            "stomach",
+            "hands",
+            "legs",
+            "lungs",
+            "eyes"
+        ]
+    },
+    {
+        "distractors": [
+            "speed",
+            "work",
+            "pressure"
+        ],
+        "generations": [
+            "electricity",
+            "air",
+            "water",
+            "money",
+            "light",
+            "heat",
+            "energy",
+            "gravity",
+            "carbon",
+            "power"
+        ]
+    },
+    {
+        "distractors": [
+            "seeds",
+            "manure",
+            "water"
+        ],
+        "generations": [
+            "plants",
+            "farms",
+            "farmers",
+            "electricity",
+            "chemicals",
+            "gases",
+            "air",
+            "water",
+            "fertil",
+            "fertilizer"
+        ]
+    },
+    {
+        "distractors": [
+            "systems",
+            "additions",
+            "Changes"
+        ],
+        "generations": [
+            "b",
+            "r",
+            "d",
+            "s",
+            "w",
+            "pro",
+            "re",
+            "f",
+            "g",
+            "prot"
+        ]
+    },
+    {
+        "distractors": [
+            "solute",
+            "mixture",
+            "water"
+        ],
+        "generations": [
+            "carbon",
+            "plastic",
+            "electricity",
+            "gas",
+            "plasma",
+            "water",
+            "oxygen",
+            "liquid",
+            "solvent",
+            "solid"
+        ]
+    },
+    {
+        "distractors": [
+            "condensation",
+            "transpiration",
+            "absorption"
+        ],
+        "generations": [
+            "f",
+            "b",
+            "poll",
+            "s",
+            "r",
+            "ver",
+            "ge",
+            "re",
+            "cond",
+            "me"
+        ]
+    },
+    {
+        "distractors": [
+            "breathing",
+            "staring",
+            "pulling"
+        ],
+        "generations": [
+            "absorption",
+            "swallowing",
+            "jumping",
+            "eating",
+            "washing",
+            "breathing",
+            "coughing",
+            "running",
+            "taking",
+            "cutting"
+        ]
+    },
+    {
+        "distractors": [
+            "peroxidation",
+            "fermentation",
+            "evaporation"
+        ],
+        "generations": [
+            "carbon",
+            "precipitation",
+            "insulation",
+            "ev",
+            "cond",
+            "regeneration",
+            "oxidation",
+            "absorption",
+            "o",
+            "resp"
+        ]
+    },
+    {
+        "distractors": [
+            "community",
+            "population",
+            "biome"
+        ],
+        "generations": [
+            "industry",
+            "consumer",
+            "ecosystem",
+            "agriculture",
+            "carbon",
+            "precipitation",
+            "habitat",
+            "climate",
+            "environment",
+            "environmental"
+        ]
+    },
+    {
+        "distractors": [
+            "primitive",
+            "algal",
+            "sexual"
+        ],
+        "generations": [
+            "met",
+            "a",
+            "vapor",
+            "carbon",
+            "secondary",
+            "industrial",
+            "an",
+            "consumer",
+            "nucle",
+            "the"
+        ]
+    },
+    {
+        "distractors": [
+            "archives",
+            "deposits",
+            "skulls"
+        ],
+        "generations": [
+            "spores",
+            "fossils",
+            "bacteria",
+            "ancestors",
+            "predators",
+            "spor",
+            "tr",
+            "prey",
+            "sperm",
+            "carniv"
+        ]
+    },
+    {
+        "distractors": [
+            "helium",
+            "grasses",
+            "water"
+        ],
+        "generations": [
+            "rock",
+            "sand",
+            "lava",
+            "stone",
+            "snow",
+            "flood",
+            "rain",
+            "clouds",
+            "glaciers",
+            "volcan"
+        ]
+    },
+    {
+        "distractors": [
+            "brachii",
+            "testes",
+            "glands"
+        ],
+        "generations": [
+            "al",
+            "d",
+            "c",
+            "tr",
+            "p",
+            "sp",
+            "o",
+            "spor",
+            "tubes",
+            "lungs"
+        ]
+    },
+    {
+        "distractors": [
+            "food",
+            "sulfur",
+            "nitrogen"
+        ],
+        "generations": [
+            "carbon",
+            "air",
+            "water",
+            "salt",
+            "soil",
+            "fertilizer",
+            "chlor",
+            "oxygen",
+            "nitrogen",
+            "bacteria"
+        ]
+    },
+    {
+        "distractors": [
+            "adolescence",
+            "death",
+            "childhood"
+        ],
+        "generations": [
+            "d",
+            "ret",
+            "ad",
+            "dec",
+            "life",
+            "year",
+            "adulthood",
+            "self",
+            "marriage",
+            "child"
+        ]
+    },
+    {
+        "distractors": [
+            "vacuoles",
+            "cells",
+            "valves"
+        ],
+        "generations": [
+            "t",
+            "g",
+            "n",
+            "pro",
+            "b",
+            "d",
+            "f",
+            "l",
+            "cl",
+            "r"
+        ]
+    },
+    {
+        "distractors": [
+            "puberty",
+            "maturity",
+            "adolescence"
+        ],
+        "generations": [
+            "reproduction",
+            "ov",
+            "sex",
+            "end",
+            "gam",
+            "menstru",
+            "o",
+            "ger",
+            "sperm",
+            "puberty"
+        ]
+    },
+    {
+        "distractors": [
+            "mammals",
+            "arthropods",
+            "sporozoans"
+        ],
+        "generations": [
+            "c",
+            "monkeys",
+            "spor",
+            "birds",
+            "shr",
+            "plants",
+            "Ch",
+            "p",
+            "P",
+            "Birds"
+        ]
+    },
+    {
+        "distractors": [
+            "mutation",
+            "difficulty",
+            "procession"
+        ],
+        "generations": [
+            "possibility",
+            "chance",
+            "opportunity",
+            "evidence",
+            "frequency",
+            "certainty",
+            "prediction",
+            "uncertainty",
+            "probability",
+            "potential"
+        ]
+    },
+    {
+        "distractors": [
+            "titanium",
+            "gold",
+            "platinum"
+        ],
+        "generations": [
+            "diamonds",
+            "stones",
+            "sands",
+            "crystals",
+            "d",
+            "coal",
+            "sand",
+            "diamond",
+            "steel",
+            "gold"
+        ]
+    },
+    {
+        "distractors": [
+            "generation",
+            "coagulation",
+            "biodegradation"
+        ],
+        "generations": [
+            "communication",
+            "carbon",
+            "met",
+            "consumer",
+            "agriculture",
+            "pollution",
+            "precipitation",
+            "energy",
+            "protection",
+            "industrial"
+        ]
+    },
+    {
+        "distractors": [
+            "variation",
+            "photosynthesis",
+            "diversification"
+        ],
+        "generations": [
+            "ev",
+            "reproduction",
+            "ger",
+            "synthesis",
+            "mutation",
+            "generation",
+            "communication",
+            "migration",
+            "adaptation",
+            "reprodu"
+        ]
+    },
+    {
+        "distractors": [
+            "inflammation",
+            "permeability",
+            "reproduction"
+        ],
+        "generations": [
+            "regeneration",
+            "migration",
+            "reproduction",
+            "resp",
+            "oxidation",
+            "metabolism",
+            "precipitation",
+            "insulation",
+            "absorption",
+            "imaging"
+        ]
+    },
+    {
+        "distractors": [
+            "staurikosaurus",
+            "mitochondria",
+            "sporozoans"
+        ],
+        "generations": [
+            "spor",
+            "lungs",
+            "g",
+            "d",
+            "p",
+            "tr",
+            "st",
+            "c",
+            "o",
+            "carniv"
+        ]
+    },
+    {
+        "distractors": [
+            "saturn",
+            "jupiter",
+            "mars"
+        ],
+        "generations": [
+            "Earth",
+            "sun",
+            "sky",
+            "earth",
+            "moon",
+            "planet",
+            "air",
+            "Mars",
+            "ground",
+            "space"
+        ]
+    },
+    {
+        "distractors": [
+            "arthritis",
+            "tuberculosis",
+            "fibrosis"
+        ],
+        "generations": [
+            "end",
+            "o",
+            "ret",
+            "gl",
+            "oste",
+            "skeletal",
+            "cortisol",
+            "regeneration",
+            "lungs",
+            "metabolism"
+        ]
+    },
+    {
+        "distractors": [
+            "slow",
+            "simple",
+            "electromagnetic"
+        ],
+        "generations": [
+            "chemical",
+            "mechanical",
+            "thermal",
+            "plastic",
+            "physical",
+            "carbon",
+            "electrical",
+            "heat",
+            "electricity",
+            "gravity"
+        ]
+    },
+    {
+        "distractors": [
+            "velocities",
+            "densities",
+            "fractions"
+        ],
+        "generations": [
+            "f",
+            "t",
+            "pro",
+            "r",
+            "d",
+            "k",
+            "ge",
+            "pr",
+            "ch",
+            "gr"
+        ]
+    },
+    {
+        "distractors": [
+            "atmospheres",
+            "diversity",
+            "biospheres"
+        ],
+        "generations": [
+            "stages",
+            "orbits",
+            "spores",
+            "gases",
+            "clouds",
+            "glaciers",
+            "spor",
+            "ev",
+            "isot",
+            "precipitation"
+        ]
+    },
+    {
+        "distractors": [
+            "plasma",
+            "spore",
+            "ova"
+        ],
+        "generations": [
+            "gam",
+            "sperm",
+            "ov",
+            "cock",
+            "baby",
+            "nucleus",
+            "egg",
+            "fetus",
+            "embryo",
+            "eggs"
+        ]
+    }
+]
