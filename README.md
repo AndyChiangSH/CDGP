@@ -7,7 +7,7 @@ Code for Findings of EMNLP 2022 short paper **"CDGP: Automatic Cloze Distractor 
 
 ## 🗂 Structure
 
-* `paper`: "CDGP: Automatic Cloze Distractor Generation based on Pre-trained Language Model"
+* `paper/`: "CDGP: Automatic Cloze Distractor Generation based on Pre-trained Language Model"
 * `models/`: models in CDGP
     * `CSG/`: the models as Candidate Set Generator
     * `DS/`: the models as Distractor Selector
@@ -23,6 +23,7 @@ Code for Findings of EMNLP 2022 short paper **"CDGP: Automatic Cloze Distractor 
     * `dis_evaluator.py`: distractors evaluator
     * `results/`: results of distractors generator
     * `evaluations/`: evaluations of distractors evaluator
+* `demo.ipynb`: code for CDGP demo
 
 ## ❤ Models
 
