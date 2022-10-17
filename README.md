@@ -155,4 +155,4 @@ Findings of EMNLP 2022 short paper **"CDGP: Automatic Cloze Distractor Generatio
 
 * Shang-Hsuan Chiang ([@AndyChiangSH](https://github.com/AndyChiangSH))
 * Ssu-Cheng Wang ([@shiro-wang](https://github.com/shiro-wang))
-* Yao-Chung Fan ([@yao-chung](https://github.com/UDICatNCHU/))
+* Yao-Chung Fan ([@yfan](https://github.com/UDICatNCHU/))
