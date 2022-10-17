@@ -148,11 +148,11 @@ We are testing in local, so we need to download the datasets and models.
 ## 📌 Citation
 
 ```
-None
+Findings of EMNLP 2022 short paper **"CDGP: Automatic Cloze Distractor Generation based on Pre-trained Language Model"**
 ```
 
 ## 😀 Author
 
 * Shang-Hsuan Chiang ([@AndyChiangSH](https://github.com/AndyChiangSH))
 * Ssu-Cheng Wang ([@shiro-wang](https://github.com/shiro-wang))
-* Yao-Chung Fan
+* Yao-Chung Fan ([@yao-chung](https://github.com/UDICatNCHU/))
