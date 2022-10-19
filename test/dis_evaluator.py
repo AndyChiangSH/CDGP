@@ -1,3 +1,9 @@
+"""
+Distractor Evaluator
+Author: AndyChiangSH
+Time: 2022/10/19
+"""
+
 import json
 import os
 import numpy as np
@@ -10,7 +16,7 @@ import csv
 # BERT_CLOTH_DGen_model1
 # result_BERT_CLOTH_model_filter
 # SciBERT_DGen_model1_DGen
-MODEL_NAME = "BERT_CLOTH_model"
+MODEL_NAME = "BERT_CLOTH(k=3)"
 RESULT_NAME = f"result_{MODEL_NAME}.json"
 
 
@@ -23,8 +29,8 @@ def main():
 
     # evaluating
     print("Evaluating...")
-    avg_eval = {"P@1": 0.0, "R@1": 0.0, "P@3": 0.0, "R@3": 0.0, "F1@3": 0.0, "P@10": 0.0, "R@10": 0.0, "F1@10": 0.0,
-                "MRR": 0.0, "MAP": 0.0, "NDCG@3": 0.0, "NDCG@10": 0.0}
+    avg_eval = {"P@1": 0.0, "R@1": 0.0, "F1@1": 0.0, "P@3": 0.0, "R@3": 0.0, "F1@3": 0.0, "P@5": 0.0, "R@5": 0.0, "F1@5": 0.0,
+                "P@10": 0.0, "R@10": 0.0, "F1@10": 0.0, "MRR@5": 0.0, "MAP@5": 0.0, "NDCG@1": 0.0, "NDCG@3": 0.0, "NDCG@5": 0.0, "NDCG@10": 0.0}
     for result in results:
         eval = evaluate(result)
         for k in avg_eval.keys():
@@ -56,8 +62,8 @@ def main():
 
 
 def evaluate(result):
-    eval = {"P@1": 0.0, "R@1": 0.0, "P@3": 0.0, "R@3": 0.0, "F1@3": 0.0,
-            "P@10": 0.0, "R@10": 0.0, "F1@10": 0.0, "MRR": 0.0, "MAP": 0.0, "NDCG@3": 0.0, "NDCG@10": 0.0}
+    eval = {"P@1": 0.0, "R@1": 0.0, "F1@1": 0.0, "P@3": 0.0, "R@3": 0.0, "F1@3": 0.0, "P@5": 0.0, "R@5": 0.0, "F1@5": 0.0,
+            "P@10": 0.0, "R@10": 0.0, "F1@10": 0.0, "MRR@5": 0.0, "MAP@5": 0.0, "NDCG@1": 0.0, "NDCG@3": 0.0, "NDCG@5": 0.0, "NDCG@10": 0.0}
     distractors = [d.lower() for d in result["distractors"]]
     generations = [d.lower() for d in result["generations"]]
 
@@ -73,51 +79,77 @@ def evaluate(result):
     # R@1
     eval["R@1"] = relevants[:1].count(1) / len(distractors)
 
+    # F1@1
+    try:
+        eval["F1@1"] = (2 * eval["P@1"] * eval["R@1"]) / \
+            (eval["P@1"] + eval["R@1"])
+    except ZeroDivisionError:
+        eval["F1@1"] = 0
+    
     # P@3
     eval["P@3"] = relevants[:3].count(1) / 3
 
     # R@3
     eval["R@3"] = relevants[:3].count(1) / len(distractors)
-
-    # P@10
-    eval["P@10"] = relevants[:10].count(1) / 10
-
-    # R@10
-    eval["R@10"] = relevants[:10].count(1) / len(distractors)
-
+    
     # F1@3
     try:
         eval["F1@3"] = (2 * eval["P@3"] * eval["R@3"]) / \
             (eval["P@3"] + eval["R@3"])
     except ZeroDivisionError:
         eval["F1@3"] = 0
+    
+    # # P@5
+    # eval["P@5"] = relevants[:5].count(1) / 5
 
-    # F1@10
-    try:
-        eval["F1@10"] = (2 * eval["P@10"] * eval["R@10"]) / \
-            (eval["P@10"] + eval["R@10"])
-    except ZeroDivisionError:
-        eval["F1@10"] = 0
+    # # R@5
+    # eval["R@5"] = relevants[:5].count(1) / len(distractors)
 
-    # MRR
-    for i in range(len(relevants)):
-        if relevants[i] == 1:
-            eval["MRR"] = 1 / (i+1)
-            break
+    # # F1@5
+    # try:
+    #     eval["F1@5"] = (2 * eval["P@5"] * eval["R@5"]) / \
+    #         (eval["P@5"] + eval["R@5"])
+    # except ZeroDivisionError:
+    #     eval["F1@5"] = 0
+    
+    # # P@10
+    # eval["P@10"] = relevants[:10].count(1) / 10
 
-    # MAP
-    rel_num = 0
-    for i in range(len(relevants)):
-        if relevants[i] == 1:
-            rel_num += 1
-            eval["MAP"] += rel_num / (i+1)
-    eval["MAP"] = eval["MAP"] / len(distractors)
+    # # R@10
+    # eval["R@10"] = relevants[:10].count(1) / len(distractors)
+
+    # # F1@10
+    # try:
+    #     eval["F1@10"] = (2 * eval["P@10"] * eval["R@10"]) / \
+    #         (eval["P@10"] + eval["R@10"])
+    # except ZeroDivisionError:
+    #     eval["F1@10"] = 0
+
+    # # MRR@5
+    # for i in range(5):
+    #     if relevants[i] == 1:
+    #         eval["MRR@5"] = 1 / (i+1)
+    #         break
+
+    # # MAP@5
+    # rel_num = 0
+    # for i in range(5):
+    #     if relevants[i] == 1:
+    #         rel_num += 1
+    #         eval["MAP@5"] += rel_num / (i+1)
+    # eval["MAP@5"] = eval["MAP@5"] / len(distractors)
+    
+    # NDCG@1
+    eval["NDCG@1"] = ndcg_at_k(relevants, 1)
 
     # NDCG@3
     eval["NDCG@3"] = ndcg_at_k(relevants, 3)
+    
+    # NDCG@5
+    # eval["NDCG@5"] = ndcg_at_k(relevants, 5)
 
     # NDCG@10
-    eval["NDCG@10"] = ndcg_at_k(relevants, 10)
+    # eval["NDCG@10"] = ndcg_at_k(relevants, 10)
 
     return eval
 

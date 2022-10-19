@@ -18,12 +18,12 @@ import json
 CSG_MODEL = "AndyChiang/cdgp-csg-bert-cloth"
 DS_MODEL = "../models/DS/cdgp-ds-fasttext.bin"
 DATASET = "../datasets/CLOTH/CLOTH_test_cleaned.json"
-RESULT = "BERT_CLOTH_model"
-TOP_K = 10
+RESULT = "BERT_CLOTH(k=3)"
+TOP_K = 3
 STOP_WORDS = ["[MASK]", "[SEP]", "[PAD]", "[CLS]"]
 WEIGHT = {"s0": 0.6, "s1": 0.15, "s2": 0.15, "s3": 0.1}
 # WEIGHT = {"s0": 0.25, "s1": 0.25, "s2": 0.25, "s3": 0.25}
-QUESTION_LIMIT = 100
+QUESTION_LIMIT = 1000
 
 
 def main():
