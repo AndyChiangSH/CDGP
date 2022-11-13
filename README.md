@@ -2,8 +2,8 @@
 
 Code for Findings of EMNLP 2022 short paper **"CDGP: Automatic Cloze Distractor Generation based on Pre-trained Language Model"**.
 
-* [Paper](https://github.com/AndyChiangSH/CDGP/blob/main/paper/CDGP%20Automatic%20Cloze%20Distractor%20Generation%20based%20on%20Pre-trained%20Language%20Model.pdf)
-* [Demo page](https://cdgp-demo.nlpnchu.org/)
+* [Paper](https://github.com/AndyChiangSH/CDGP/blob/main/paper/CDGP_EMNLP_2022.pdf)
+* [Demo](https://cdgp-demo.nlpnchu.org/)
 
 ## 🗂 Structure
 
