@@ -4,6 +4,7 @@ Code for Findings of EMNLP 2022 short paper **"CDGP: Automatic Cloze Distractor 
 
 * [Paper](https://github.com/AndyChiangSH/CDGP/blob/main/paper/CDGP_EMNLP_2022.pdf)
 * [Demo](https://cdgp-demo.nlpnchu.org/)
+* [ACL](https://aclanthology.org/2022.findings-emnlp.429/)
 
 ## 🗂 Structure
 
@@ -148,7 +149,20 @@ We are testing in local, so we need to download the datasets and models.
 ## 📌 Citation
 
 ```
-Findings of EMNLP 2022 short paper **"CDGP: Automatic Cloze Distractor Generation based on Pre-trained Language Model"**
+@inproceedings{chiang-etal-2022-cdgp,
+    title = "{CDGP}: Automatic Cloze Distractor Generation based on Pre-trained Language Model",
+    author = "Chiang, Shang-Hsuan  and
+      Wang, Ssu-Cheng  and
+      Fan, Yao-Chung",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2022",
+    month = dec,
+    year = "2022",
+    address = "Abu Dhabi, United Arab Emirates",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.findings-emnlp.429",
+    pages = "5835--5840",
+    abstract = "Manually designing cloze test consumes enormous time and efforts. The major challenge lies in wrong option (distractor) selection. Having carefully-design distractors improves the effectiveness of learner ability assessment. As a result, the idea of automatically generating cloze distractor is motivated. In this paper, we investigate cloze distractor generation by exploring the employment of pre-trained language models (PLMs) as an alternative for candidate distractor generation. Experiments show that the PLM-enhanced model brings a substantial performance improvement. Our best performing model advances the state-of-the-art result from 14.94 to 34.17 (NDCG@10 score). Our code and dataset is available at https://github.com/AndyChiangSH/CDGP.",
+}
 ```
 
 ## 😀 Author
