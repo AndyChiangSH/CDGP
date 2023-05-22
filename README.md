@@ -170,3 +170,7 @@ We are testing in local, so we need to download the datasets and models.
 * Shang-Hsuan Chiang ([@AndyChiangSH](https://github.com/AndyChiangSH))
 * Ssu-Cheng Wang ([@shiro-wang](https://github.com/shiro-wang))
 * Yao-Chung Fan ([@yfan](https://github.com/UDICatNCHU/))
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=AndyChiangSH/CDGP&type=Timeline)](https://star-history.com/#AndyChiangSH/CDGP&Timeline)
